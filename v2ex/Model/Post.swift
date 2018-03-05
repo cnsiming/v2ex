@@ -47,11 +47,15 @@ class Post {
         }
     }
 
-    class func getPostList(of tab: String) -> [Post] {
-        var posts = [Post]()
-        if let url = URL(string: baseURL + "?tab=" + tab) {
+    class func getPostList(of tab: String, completion: @escaping ([Post]) -> Void) {
+        let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+
+        Alamofire.request(baseURL, method: .get, parameters: ["tab": tab], encoding: URLEncoding.default, headers: ["User-Agent": userAgent]).responseString { response in
+            var posts = [Post]()
+            guard let html = response.result.value else {
+                return
+            }
             do {
-                let html = try Data(contentsOf: url)
                 let doc = try HTML(html: html, encoding: .utf8)
                 for post in doc.xpath("//div[@class='cell item']") {
                     posts.append(Post(html: post.toHTML!))
@@ -59,8 +63,7 @@ class Post {
             } catch let error as NSError {
                 print(error.userInfo)
             }
+            completion(posts)
         }
-
-        return posts
     }
 }

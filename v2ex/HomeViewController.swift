@@ -16,7 +16,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        posts = Post.getPostList(of: "all")
+        Post.getPostList(of: "all") { results in
+            self.posts = results
+            self.tableView.reloadData()
+        }
     }
 }
 
