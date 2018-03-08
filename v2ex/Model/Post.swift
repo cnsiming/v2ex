@@ -10,7 +10,7 @@
 import Kanna
 import Alamofire
 
-let baseURL = "https://www.v2ex.com/"
+let baseURL = "https://www.v2ex.com"
 
 class Post {
     var url: String?
@@ -22,14 +22,15 @@ class Post {
     var commentTime: String?
     var commentUser: String?
     var commentCount: String?
-    private var dataTask: URLSessionDataTask? = nil
 
     init(html: String) {
         do {
             let doc = try HTML(html: html, encoding: .utf8)
 
-            self.url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"]
-            self.avatar = doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"]
+            if let url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"] {
+                self.url = baseURL + String(url.split(separator: "#")[0])
+            }
+            self.avatar = "https:" + (doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"] ?? "")
             self.title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content
             self.nodeName = doc.xpath("//table/tr/td[3]/span[2]/a").first?.content
             self.nodeURL = doc.xpath("//table/tr/td[3]/span[2]/a").first?["href"]
@@ -40,7 +41,6 @@ class Post {
             if let timeString = doc.xpath("//table/tr/td[3]/span[2]/text()[3]").first?.content {
                 self.commentTime = timeString.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
             }
-
 
         } catch let error as NSError {
             print(error.userInfo)

@@ -9,6 +9,14 @@
 import UIKit
 
 class PostCell: UITableViewCell {
+    var avatarUrl: String? {
+        didSet {
+            if let avatarUrl = avatarUrl, let url = URL(string: avatarUrl) {
+                avatar.kf.setImage(with: url)
+            }
+        }
+    }
+
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var username: UILabel!

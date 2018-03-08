@@ -31,9 +31,7 @@ class HomeViewController: UIViewController {
             return
         }
         let post = posts[indexPath.row]
-        if let avatar = post.avatar, let url = URL(string: "https:\(avatar)") {
-            cell.avatar.kf.setImage(with: url)
-        }
+        cell.avatarUrl = post.avatar
         cell.title.text = post.title
         cell.username.text = post.username
         if let node = post.nodeName {
@@ -44,6 +42,16 @@ class HomeViewController: UIViewController {
         }
         if let comments = post.commentCount {
             cell.comments.text = "✉️ " + comments
+        }
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPostDetail" {
+            let postDetailVC = segue.destination as! PostDetailViewController
+            if let indexPath = tableView.indexPath(for: sender as! PostCell) {
+                postDetailVC.post = posts[indexPath.row]
+            }
         }
     }
 }
@@ -60,5 +68,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
