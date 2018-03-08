@@ -13,6 +13,7 @@ class PostDetail {
     var avatar: String?
     var footer: String?
     var content: String?
+    var comments = [Comment]()
 
     init(by html: String) {
         do {
@@ -20,6 +21,11 @@ class PostDetail {
             self.avatar = "https:" + (doc.xpath("//*[@id='Main']/div[2]/div[1]/div[1]/a/img").first?["src"] ?? "")
             self.footer = doc.xpath("//*[@id='Main']/div[2]/div[1]/small").first?.content
             self.content = doc.xpath("//*[@class='topic_content']").first?.content
+            for element in doc.xpath("//*[@id='Main']/div[4]/*/table") {
+                if let comment = Comment(by: element.toHTML!) {
+                    self.comments.append(comment)
+                }
+            }
         } catch let error as NSError {
             print(error.userInfo)
         }

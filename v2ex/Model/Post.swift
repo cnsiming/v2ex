@@ -23,15 +23,20 @@ class Post {
     var commentUser: String?
     var commentCount: String?
 
-    init(html: String) {
+    init?(html: String) {
         do {
             let doc = try HTML(html: html, encoding: .utf8)
 
+            // 如果获取不到标题，就跳过
+            if let title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content {
+                self.title = title
+            } else {
+                return nil
+            }
             if let url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"] {
                 self.url = baseURL + String(url.split(separator: "#")[0])
             }
             self.avatar = "https:" + (doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"] ?? "")
-            self.title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content
             self.nodeName = doc.xpath("//table/tr/td[3]/span[2]/a").first?.content
             self.nodeURL = doc.xpath("//table/tr/td[3]/span[2]/a").first?["href"]
             self.username = doc.xpath("//table/tr/td[3]/span[2]/strong[1]").first?.content
@@ -44,6 +49,7 @@ class Post {
 
         } catch let error as NSError {
             print(error.userInfo)
+            return nil
         }
     }
 
@@ -57,8 +63,10 @@ class Post {
             }
             do {
                 let doc = try HTML(html: html, encoding: .utf8)
-                for post in doc.xpath("//div[@class='cell item']") {
-                    posts.append(Post(html: post.toHTML!))
+                for element in doc.xpath("//div[@class='cell item']") {
+                    if let post = Post(html: element.toHTML!) {
+                        posts.append(post)
+                    }
                 }
             } catch let error as NSError {
                 print(error.userInfo)

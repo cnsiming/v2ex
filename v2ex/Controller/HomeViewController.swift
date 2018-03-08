@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
+        tableView.tableFooterView = UIView()    // hide extra separator
     }
 
     private func configure(cell: UITableViewCell, for indexPath: IndexPath) {

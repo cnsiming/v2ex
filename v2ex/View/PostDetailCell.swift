@@ -28,7 +28,7 @@ class PostDetailCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        avatar.layer.cornerRadius = 8
+        avatar.layer.cornerRadius = avatar.frame.width / 2
         avatar.layer.masksToBounds = true
     }
 

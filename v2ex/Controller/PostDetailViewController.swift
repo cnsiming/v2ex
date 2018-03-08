@@ -29,7 +29,7 @@ class PostDetailViewController: UIViewController {
         }
 
         // 隐藏多余的分割线
-//        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
     }
 
     func configure(cell: UITableViewCell, for indexPath: IndexPath) {
@@ -42,6 +42,14 @@ class PostDetailViewController: UIViewController {
                 cell.node.text = "🏷 " + node
             }
             cell.content.text = postDetail?.content
+        } else {
+            let cell = cell as! CommentCell
+            let comment = postDetail?.comments[indexPath.row - 1]
+            cell.avatarUrl = comment?.avatar
+            cell.username.text = comment?.username
+            cell.time.text = comment?.time
+            cell.floor.text = "  \(indexPath.row)  "
+            cell.content.text = comment?.content
         }
     }
 
@@ -49,12 +57,22 @@ class PostDetailViewController: UIViewController {
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 1
+        if let postDetail = postDetail {
+            return postDetail.comments.count + 1
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetailCell", for: indexPath) as! PostDetailCell
-        configure(cell: cell, for: indexPath)
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetailCell", for: indexPath)
+            configure(cell: cell, for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
+            configure(cell: cell, for: indexPath)
+            return cell
+        }
     }
 }

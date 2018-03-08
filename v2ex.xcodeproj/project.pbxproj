@@ -24,6 +24,8 @@
 		94CC3C1220495A0500C6F490 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1120495A0500C6F490 /* Post.swift */; };
 		94CC3C1420495B1500C6F490 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1320495B1500C6F490 /* Member.swift */; };
 		94CC3C1620495DE400C6F490 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1520495DE400C6F490 /* Node.swift */; };
+		94EB12332051330900722B99 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12322051330900722B99 /* Comment.swift */; };
+		94EB12352051333C00722B99 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12342051333C00722B99 /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		94CC3C1120495A0500C6F490 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		94CC3C1320495B1500C6F490 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		94CC3C1520495DE400C6F490 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		94EB12322051330900722B99 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		94EB12342051333C00722B99 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			children = (
 				94CC3C1120495A0500C6F490 /* Post.swift */,
 				94293F26204FE07F0015BF16 /* PostDetail.swift */,
+				94EB12322051330900722B99 /* Comment.swift */,
 				94CC3C1520495DE400C6F490 /* Node.swift */,
 				94CC3C1320495B1500C6F490 /* Member.swift */,
 			);
@@ -118,6 +123,7 @@
 			children = (
 				94293F20204E6A4F0015BF16 /* PostCell.swift */,
 				94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */,
+				94EB12342051333C00722B99 /* CommentCell.swift */,
 				94CC3C01204949A700C6F490 /* Main.storyboard */,
 				94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */,
 			);
@@ -306,7 +312,9 @@
 				94CC3C1220495A0500C6F490 /* Post.swift in Sources */,
 				94CC3C1420495B1500C6F490 /* Member.swift in Sources */,
 				94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */,
+				94EB12332051330900722B99 /* Comment.swift in Sources */,
 				94293F19204CE3AD0015BF16 /* API.swift in Sources */,
+				94EB12352051333C00722B99 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
