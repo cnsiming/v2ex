@@ -8,17 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		0007E6226E896B0C1A3A53EE /* Pods_v2ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AEC3BF2340D03C4809B7D7 /* Pods_v2ex.framework */; };
+		94293F19204CE3AD0015BF16 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F18204CE3AD0015BF16 /* API.swift */; };
+		94293F1C204D31240015BF16 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F1D204D31240015BF16 /* Kanna.framework */; };
+		94293F1E204D6D0D0015BF16 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F1F204D6D0D0015BF16 /* Alamofire.framework */; };
+		94293F21204E6A4F0015BF16 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F20204E6A4F0015BF16 /* PostCell.swift */; };
+		94293F22204E969E0015BF16 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F23204E969E0015BF16 /* Kingfisher.framework */; };
+		94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F26204FE07F0015BF16 /* PostDetail.swift */; };
+		94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F28204FE24D0015BF16 /* PostDetailViewController.swift */; };
+		94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */; };
 		94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3BFD204949A700C6F490 /* AppDelegate.swift */; };
 		94CC3C00204949A700C6F490 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3BFF204949A700C6F490 /* HomeViewController.swift */; };
 		94CC3C03204949A700C6F490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CC3C01204949A700C6F490 /* Main.storyboard */; };
 		94CC3C05204949A700C6F490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CC3C04204949A700C6F490 /* Assets.xcassets */; };
 		94CC3C08204949A700C6F490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */; };
+		94CC3C1220495A0500C6F490 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1120495A0500C6F490 /* Post.swift */; };
+		94CC3C1420495B1500C6F490 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1320495B1500C6F490 /* Member.swift */; };
+		94CC3C1620495DE400C6F490 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1520495DE400C6F490 /* Node.swift */; };
+		94EB12332051330900722B99 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12322051330900722B99 /* Comment.swift */; };
+		94EB12352051333C00722B99 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12342051333C00722B99 /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03665F0DFCC4ED28096E4A36 /* Pods-v2ex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.release.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.release.xcconfig"; sourceTree = "<group>"; };
 		58AEC3BF2340D03C4809B7D7 /* Pods_v2ex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_v2ex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E16142AFDB7FA0578A88E2 /* Pods-v2ex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-v2ex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-v2ex/Pods-v2ex.debug.xcconfig"; sourceTree = "<group>"; };
+		94293F18204CE3AD0015BF16 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		94293F1D204D31240015BF16 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94293F1F204D6D0D0015BF16 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94293F20204E6A4F0015BF16 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		94293F23204E969E0015BF16 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94293F26204FE07F0015BF16 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		94293F28204FE24D0015BF16 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		94CC3BFA204949A700C6F490 /* v2ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v2ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC3BFD204949A700C6F490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94CC3BFF204949A700C6F490 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +47,11 @@
 		94CC3C04204949A700C6F490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94CC3C07204949A700C6F490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94CC3C09204949A700C6F490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94CC3C1120495A0500C6F490 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		94CC3C1320495B1500C6F490 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		94CC3C1520495DE400C6F490 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		94EB12322051330900722B99 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		94EB12342051333C00722B99 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94293F22204E969E0015BF16 /* Kingfisher.framework in Frameworks */,
+				94293F1E204D6D0D0015BF16 /* Alamofire.framework in Frameworks */,
+				94293F1C204D31240015BF16 /* Kanna.framework in Frameworks */,
 				0007E6226E896B0C1A3A53EE /* Pods_v2ex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +76,58 @@
 				03665F0DFCC4ED28096E4A36 /* Pods-v2ex.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		94293F16204CE36B0015BF16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94CC3C1120495A0500C6F490 /* Post.swift */,
+				94293F26204FE07F0015BF16 /* PostDetail.swift */,
+				94EB12322051330900722B99 /* Comment.swift */,
+				94CC3C1520495DE400C6F490 /* Node.swift */,
+				94CC3C1320495B1500C6F490 /* Member.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94293F17204CE3940015BF16 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				94293F18204CE3AD0015BF16 /* API.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		94293F2C204FEAB40015BF16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				94293F17204CE3940015BF16 /* Networking */,
+				94CC3BFF204949A700C6F490 /* HomeViewController.swift */,
+				94293F28204FE24D0015BF16 /* PostDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		94293F2D204FEACF0015BF16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94CC3BFD204949A700C6F490 /* AppDelegate.swift */,
+				94CC3C04204949A700C6F490 /* Assets.xcassets */,
+				94CC3C09204949A700C6F490 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94293F2E204FEAEB0015BF16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94293F20204E6A4F0015BF16 /* PostCell.swift */,
+				94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */,
+				94EB12342051333C00722B99 /* CommentCell.swift */,
+				94CC3C01204949A700C6F490 /* Main.storyboard */,
+				94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		94CC3BF1204949A700C6F490 = {
@@ -70,12 +151,10 @@
 		94CC3BFC204949A700C6F490 /* v2ex */ = {
 			isa = PBXGroup;
 			children = (
-				94CC3BFD204949A700C6F490 /* AppDelegate.swift */,
-				94CC3BFF204949A700C6F490 /* HomeViewController.swift */,
-				94CC3C01204949A700C6F490 /* Main.storyboard */,
-				94CC3C04204949A700C6F490 /* Assets.xcassets */,
-				94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */,
-				94CC3C09204949A700C6F490 /* Info.plist */,
+				94293F16204CE36B0015BF16 /* Model */,
+				94293F2E204FEAEB0015BF16 /* View */,
+				94293F2C204FEAB40015BF16 /* Controller */,
+				94293F2D204FEACF0015BF16 /* Supporting Files */,
 			);
 			path = v2ex;
 			sourceTree = "<group>";
@@ -83,6 +162,9 @@
 		99AEE0E368143DBB131A1361 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94293F23204E969E0015BF16 /* Kingfisher.framework */,
+				94293F1F204D6D0D0015BF16 /* Alamofire.framework */,
+				94293F1D204D31240015BF16 /* Kanna.framework */,
 				58AEC3BF2340D03C4809B7D7 /* Pods_v2ex.framework */,
 			);
 			name = Frameworks;
@@ -165,9 +247,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-v2ex/Pods-v2ex-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -214,8 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94293F21204E6A4F0015BF16 /* PostCell.swift in Sources */,
 				94CC3C00204949A700C6F490 /* HomeViewController.swift in Sources */,
 				94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */,
+				94CC3C1620495DE400C6F490 /* Node.swift in Sources */,
+				94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */,
+				94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */,
+				94CC3C1220495A0500C6F490 /* Post.swift in Sources */,
+				94CC3C1420495B1500C6F490 /* Member.swift in Sources */,
+				94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */,
+				94EB12332051330900722B99 /* Comment.swift in Sources */,
+				94293F19204CE3AD0015BF16 /* API.swift in Sources */,
+				94EB12352051333C00722B99 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8EZE77275G;
-				INFOPLIST_FILE = v2ex/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/v2ex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wujiangbin.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8EZE77275G;
-				INFOPLIST_FILE = v2ex/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/v2ex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wujiangbin.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
