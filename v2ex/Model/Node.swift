@@ -8,27 +8,27 @@
 
 import Foundation
 
-struct Node: Codable {
-    var id = 0
-    var name = ""
-    var title = ""
-    var titleAlternative = ""
-    var url = ""
-    var topics = 0
-    var stars: Int?
-    var header: String?
-    var footer: String?
-    var created: Int?
-    var avatarMini = ""  // "avatar_mini" : "//cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1519960851"
-    var avatarNormal = ""
-    var avatarLarge = ""
+struct NodeType: Codable {
+    var type: String?
+    var nodes: [Node]?
 
-    enum CodingKeys: String, CodingKey {
-        case id, name, title
-        case titleAlternative = "title_alternative"
-        case url, topics, stars, header, footer, created
-        case avatarMini = "avatar_mini"
-        case avatarNormal = "avatar_normal"
-        case avatarLarge = "avatar_large"
+    static func loadDefaultNodes() -> [NodeType] {
+        var results = [NodeType]()
+        do {
+            let decoder = JSONDecoder()
+            let jsonURL = Bundle.main.url(forResource: "nodes", withExtension: "json")!
+            let jsonData = try Data(contentsOf: jsonURL)
+            results = try decoder.decode([NodeType].self, from: jsonData)
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+        return results
     }
 }
+
+struct Node: Codable {
+    var name: String?
+    var url: String?
+}
+
+

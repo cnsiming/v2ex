@@ -18,7 +18,7 @@ class Comment {
         do {
             let doc = try HTML(html: element, encoding: .utf8)
 
-            // 如果获取不到恢复内容，就跳过
+            // 如果获取不到回复内容，就跳过
             if let content = doc.xpath("//*[@class='reply_content']").first?.content {
                 self.content = content
             } else {

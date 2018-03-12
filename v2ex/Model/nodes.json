@@ -1,0 +1,624 @@
+[
+    {
+        "type": "分享与探索",
+        "nodes": [
+            {
+                "name": "问与答",
+                "url": "https:/www.v2ex.com/go/qna"
+            },
+            {
+                "name": "分享发现",
+                "url": "https:/www.v2ex.com/go/share"
+            },
+            {
+                "name": "分享创造",
+                "url": "https:/www.v2ex.com/go/create"
+            },
+            {
+                "name": "分享邀请码",
+                "url": "https:/www.v2ex.com/go/in"
+            },
+            {
+                "name": "奇思妙想",
+                "url": "https:/www.v2ex.com/go/ideas"
+            },
+            {
+                "name": "自言自语",
+                "url": "https:/www.v2ex.com/go/autistic"
+            },
+            {
+                "name": "随想",
+                "url": "https:/www.v2ex.com/go/random"
+            },
+            {
+                "name": "设计",
+                "url": "https:/www.v2ex.com/go/design"
+            },
+            {
+                "name": "Blog",
+                "url": "https:/www.v2ex.com/go/blog"
+            }
+        ]
+    },
+    {
+        "type": "V2EX",
+        "nodes": [
+            {
+                "name": "V2EX",
+                "url": "https:/www.v2ex.com/go/v2ex"
+            },
+            {
+                "name": "DNS",
+                "url": "https:/www.v2ex.com/go/dns"
+            },
+            {
+                "name": "Project Babel",
+                "url": "https:/www.v2ex.com/go/babel"
+            },
+            {
+                "name": "反馈",
+                "url": "https:/www.v2ex.com/go/feedback"
+            },
+            {
+                "name": "Google App Engine",
+                "url": "https:/www.v2ex.com/go/gae"
+            },
+            {
+                "name": "使用指南",
+                "url": "https:/www.v2ex.com/go/guide"
+            }
+        ]
+    },
+    {
+        "type": "iOS",
+        "nodes": [
+            {
+                "name": "iDev",
+                "url": "https:/www.v2ex.com/go/idev"
+            },
+            {
+                "name": "iCode",
+                "url": "https:/www.v2ex.com/go/icode"
+            },
+            {
+                "name": "iMarketing",
+                "url": "https:/www.v2ex.com/go/imarketing"
+            },
+            {
+                "name": "iAd",
+                "url": "https:/www.v2ex.com/go/iad"
+            },
+            {
+                "name": "iTransfer",
+                "url": "https:/www.v2ex.com/go/itransfer"
+            }
+        ]
+    },
+    {
+        "type": "Geek",
+        "nodes": [
+            {
+                "name": "程序员",
+                "url": "https:/www.v2ex.com/go/programmer"
+            },
+            {
+                "name": "Python",
+                "url": "https:/www.v2ex.com/go/python"
+            },
+            {
+                "name": "Android",
+                "url": "https:/www.v2ex.com/go/android"
+            },
+            {
+                "name": "宽带症候群",
+                "url": "https:/www.v2ex.com/go/bb"
+            },
+            {
+                "name": "Linux",
+                "url": "https:/www.v2ex.com/go/linux"
+            },
+            {
+                "name": "PHP",
+                "url": "https:/www.v2ex.com/go/php"
+            },
+            {
+                "name": "云计算",
+                "url": "https:/www.v2ex.com/go/cloud"
+            },
+            {
+                "name": "硬件",
+                "url": "https:/www.v2ex.com/go/hardware"
+            },
+            {
+                "name": "外包",
+                "url": "https:/www.v2ex.com/go/outsourcing"
+            },
+            {
+                "name": "Node.js",
+                "url": "https:/www.v2ex.com/go/nodejs"
+            },
+            {
+                "name": "Java",
+                "url": "https:/www.v2ex.com/go/java"
+            },
+            {
+                "name": "服务器",
+                "url": "https:/www.v2ex.com/go/server"
+            },
+            {
+                "name": "Bitcoin",
+                "url": "https:/www.v2ex.com/go/bitcoin"
+            },
+            {
+                "name": "MySQL",
+                "url": "https:/www.v2ex.com/go/mysql"
+            },
+            {
+                "name": "编程",
+                "url": "https:/www.v2ex.com/go/programming"
+            },
+            {
+                "name": "Linode",
+                "url": "https:/www.v2ex.com/go/linode"
+            },
+            {
+                "name": "汽车",
+                "url": "https:/www.v2ex.com/go/car"
+            },
+            {
+                "name": "设计师",
+                "url": "https:/www.v2ex.com/go/designer"
+            },
+            {
+                "name": "Kindle",
+                "url": "https:/www.v2ex.com/go/kindle"
+            },
+            {
+                "name": "Markdown",
+                "url": "https:/www.v2ex.com/go/markdown"
+            },
+            {
+                "name": "MongoDB",
+                "url": "https:/www.v2ex.com/go/mongodb"
+            },
+            {
+                "name": "Tornado",
+                "url": "https:/www.v2ex.com/go/tornado"
+            },
+            {
+                "name": "Ruby on Rails",
+                "url": "https:/www.v2ex.com/go/ror"
+            },
+            {
+                "name": "Minecraft",
+                "url": "https:/www.v2ex.com/go/minecraft"
+            },
+            {
+                "name": "Redis",
+                "url": "https:/www.v2ex.com/go/redis"
+            },
+            {
+                "name": "字体排印",
+                "url": "https:/www.v2ex.com/go/typography"
+            },
+            {
+                "name": "Ruby",
+                "url": "https:/www.v2ex.com/go/ruby"
+            },
+            {
+                "name": "商业模式",
+                "url": "https:/www.v2ex.com/go/business"
+            },
+            {
+                "name": "数学",
+                "url": "https:/www.v2ex.com/go/math"
+            },
+            {
+                "name": "Photoshop",
+                "url": "https:/www.v2ex.com/go/photoshop"
+            },
+            {
+                "name": "Amazon",
+                "url": "https:/www.v2ex.com/go/amazon"
+            },
+            {
+                "name": "LEGO",
+                "url": "https:/www.v2ex.com/go/lego"
+            },
+            {
+                "name": "SONY",
+                "url": "https:/www.v2ex.com/go/sony"
+            },
+            {
+                "name": "自然语言处理",
+                "url": "https:/www.v2ex.com/go/nlp"
+            },
+            {
+                "name": "Serverless",
+                "url": "https:/www.v2ex.com/go/serverless"
+            },
+            {
+                "name": "C#",
+                "url": "https:/www.v2ex.com/go/csharp"
+            }
+        ]
+    },
+    {
+        "type": "游戏",
+        "nodes": [
+            {
+                "name": "游戏",
+                "url": "https:/www.v2ex.com/go/games"
+            },
+            {
+                "name": "Steam",
+                "url": "https:/www.v2ex.com/go/steam"
+            },
+            {
+                "name": "PlayStation 4",
+                "url": "https:/www.v2ex.com/go/ps4"
+            },
+            {
+                "name": "英雄联盟",
+                "url": "https:/www.v2ex.com/go/lol"
+            },
+            {
+                "name": "iGame",
+                "url": "https:/www.v2ex.com/go/igame"
+            },
+            {
+                "name": "Battlefield 3",
+                "url": "https:/www.v2ex.com/go/bf3"
+            },
+            {
+                "name": "StarCraft 2",
+                "url": "https:/www.v2ex.com/go/sc2"
+            },
+            {
+                "name": "PlayStation 3",
+                "url": "https:/www.v2ex.com/go/ps3"
+            },
+            {
+                "name": "World of Warcraft",
+                "url": "https:/www.v2ex.com/go/wow"
+            },
+            {
+                "name": "Nintendo Switch",
+                "url": "https:/www.v2ex.com/go/switch"
+            },
+            {
+                "name": "EVE",
+                "url": "https:/www.v2ex.com/go/eve"
+            },
+            {
+                "name": "Xbox 360",
+                "url": "https:/www.v2ex.com/go/xbox360"
+            },
+            {
+                "name": "王者荣耀",
+                "url": "https:/www.v2ex.com/go/5v5"
+            },
+            {
+                "name": "Battlefield 4",
+                "url": "https:/www.v2ex.com/go/bf4"
+            },
+            {
+                "name": "Gran Turismo",
+                "url": "https:/www.v2ex.com/go/gt"
+            },
+            {
+                "name": "Wii",
+                "url": "https:/www.v2ex.com/go/wii"
+            },
+            {
+                "name": "Wii U",
+                "url": "https:/www.v2ex.com/go/wiiu"
+            }
+        ]
+    },
+    {
+        "type": "Apple",
+        "nodes": [
+            {
+                "name": "macOS",
+                "url": "https:/www.v2ex.com/go/macos"
+            },
+            {
+                "name": "iPhone",
+                "url": "https:/www.v2ex.com/go/iphone"
+            },
+            {
+                "name": "MacBook Pro",
+                "url": "https:/www.v2ex.com/go/mbp"
+            },
+            {
+                "name": "iPad",
+                "url": "https:/www.v2ex.com/go/ipad"
+            },
+            {
+                "name": "MacBook",
+                "url": "https:/www.v2ex.com/go/macbook"
+            },
+            {
+                "name": "配件",
+                "url": "https:/www.v2ex.com/go/accessory"
+            },
+            {
+                "name": "MacBook Air",
+                "url": "https:/www.v2ex.com/go/mba"
+            },
+            {
+                "name": "iMac",
+                "url": "https:/www.v2ex.com/go/imac"
+            },
+            {
+                "name": "Mac mini",
+                "url": "https:/www.v2ex.com/go/macmini"
+            },
+            {
+                "name": "iPod",
+                "url": "https:/www.v2ex.com/go/ipod"
+            },
+            {
+                "name": "Mac Pro",
+                "url": "https:/www.v2ex.com/go/macpro"
+            },
+            {
+                "name": "MobileMe",
+                "url": "https:/www.v2ex.com/go/mobileme"
+            },
+            {
+                "name": "iWork",
+                "url": "https:/www.v2ex.com/go/iwork"
+            },
+            {
+                "name": "iLife",
+                "url": "https:/www.v2ex.com/go/ilife"
+            },
+            {
+                "name": "GarageBand",
+                "url": "https:/www.v2ex.com/go/garageband"
+            }
+        ]
+    },
+    {
+        "type": "生活",
+        "nodes": [
+            {
+                "name": "二手交易",
+                "url": "https:/www.v2ex.com/go/all4all"
+            },
+            {
+                "name": "酷工作",
+                "url": "https:/www.v2ex.com/go/jobs"
+            },
+            {
+                "name": "天黑以后",
+                "url": "https:/www.v2ex.com/go/afterdark"
+            },
+            {
+                "name": "免费赠送",
+                "url": "https:/www.v2ex.com/go/free"
+            },
+            {
+                "name": "音乐",
+                "url": "https:/www.v2ex.com/go/music"
+            },
+            {
+                "name": "电影",
+                "url": "https:/www.v2ex.com/go/movie"
+            },
+            {
+                "name": "物物交换",
+                "url": "https:/www.v2ex.com/go/exchange"
+            },
+            {
+                "name": "剧集",
+                "url": "https:/www.v2ex.com/go/tv"
+            },
+            {
+                "name": "信用卡",
+                "url": "https:/www.v2ex.com/go/creditcard"
+            },
+            {
+                "name": "投资",
+                "url": "https:/www.v2ex.com/go/invest"
+            },
+            {
+                "name": "团购",
+                "url": "https:/www.v2ex.com/go/tuan"
+            },
+            {
+                "name": "美酒与美食",
+                "url": "https:/www.v2ex.com/go/taste"
+            },
+            {
+                "name": "阅读",
+                "url": "https:/www.v2ex.com/go/reading"
+            },
+            {
+                "name": "旅行",
+                "url": "https:/www.v2ex.com/go/travel"
+            },
+            {
+                "name": "摄影",
+                "url": "https:/www.v2ex.com/go/photograph"
+            },
+            {
+                "name": "绿茵场",
+                "url": "https:/www.v2ex.com/go/soccer"
+            },
+            {
+                "name": "Baby",
+                "url": "https:/www.v2ex.com/go/baby"
+            },
+            {
+                "name": "宠物",
+                "url": "https:/www.v2ex.com/go/pet"
+            },
+            {
+                "name": "咖啡",
+                "url": "https:/www.v2ex.com/go/coffee"
+            },
+            {
+                "name": "乐活",
+                "url": "https:/www.v2ex.com/go/lohas"
+            },
+            {
+                "name": "骑行",
+                "url": "https:/www.v2ex.com/go/bike"
+            },
+            {
+                "name": "非诚勿扰",
+                "url": "https:/www.v2ex.com/go/love"
+            },
+            {
+                "name": "日记",
+                "url": "https:/www.v2ex.com/go/diary"
+            },
+            {
+                "name": "植物",
+                "url": "https:/www.v2ex.com/go/plant"
+            },
+            {
+                "name": "蘑菇",
+                "url": "https:/www.v2ex.com/go/mushroom"
+            },
+            {
+                "name": "行程控",
+                "url": "https:/www.v2ex.com/go/mileage"
+            }
+        ]
+    },
+    {
+        "type": "Internet",
+        "nodes": [
+            {
+                "name": "Google",
+                "url": "https:/www.v2ex.com/go/google"
+            },
+            {
+                "name": "Twitter",
+                "url": "https:/www.v2ex.com/go/twitter"
+            },
+            {
+                "name": "Coding",
+                "url": "https:/www.v2ex.com/go/coding"
+            },
+            {
+                "name": "Facebook",
+                "url": "https:/www.v2ex.com/go/facebook"
+            },
+            {
+                "name": "Wikipedia",
+                "url": "https:/www.v2ex.com/go/wikipedia"
+            },
+            {
+                "name": "reddit",
+                "url": "https:/www.v2ex.com/go/reddit"
+            }
+        ]
+    },
+    {
+        "type": "城市",
+        "nodes": [
+            {
+                "name": "北京",
+                "url": "https:/www.v2ex.com/go/beijing"
+            },
+            {
+                "name": "上海",
+                "url": "https:/www.v2ex.com/go/shanghai"
+            },
+            {
+                "name": "深圳",
+                "url": "https:/www.v2ex.com/go/shenzhen"
+            },
+            {
+                "name": "杭州",
+                "url": "https:/www.v2ex.com/go/hangzhou"
+            },
+            {
+                "name": "成都",
+                "url": "https:/www.v2ex.com/go/chengdu"
+            },
+            {
+                "name": "广州",
+                "url": "https:/www.v2ex.com/go/guangzhou"
+            },
+            {
+                "name": "武汉",
+                "url": "https:/www.v2ex.com/go/wuhan"
+            },
+            {
+                "name": "昆明",
+                "url": "https:/www.v2ex.com/go/kunming"
+            },
+            {
+                "name": "天津",
+                "url": "https:/www.v2ex.com/go/tianjin"
+            },
+            {
+                "name": "New York",
+                "url": "https:/www.v2ex.com/go/nyc"
+            },
+            {
+                "name": "San Francisco",
+                "url": "https:/www.v2ex.com/go/sanfrancisco"
+            },
+            {
+                "name": "青岛",
+                "url": "https:/www.v2ex.com/go/qingdao"
+            },
+            {
+                "name": "Los Angeles",
+                "url": "https:/www.v2ex.com/go/la"
+            },
+            {
+                "name": "Boston",
+                "url": "https:/www.v2ex.com/go/boston"
+            }
+        ]
+    },
+    {
+        "type": "品牌",
+        "nodes": [
+            {
+                "name": "UNIQLO",
+                "url": "https:/www.v2ex.com/go/uniqlo"
+            },
+            {
+                "name": "Lamy",
+                "url": "https:/www.v2ex.com/go/lamy"
+            },
+            {
+                "name": "宜家",
+                "url": "https:/www.v2ex.com/go/ikea"
+            },
+            {
+                "name": "无印良品",
+                "url": "https:/www.v2ex.com/go/muji"
+            },
+            {
+                "name": "Gap",
+                "url": "https:/www.v2ex.com/go/gap"
+            },
+            {
+                "name": "Nike",
+                "url": "https:/www.v2ex.com/go/nike"
+            },
+            {
+                "name": "Moleskine",
+                "url": "https:/www.v2ex.com/go/moleskine"
+            },
+            {
+                "name": "Adidas",
+                "url": "https:/www.v2ex.com/go/adidas"
+            },
+            {
+                "name": "G-Star",
+                "url": "https:/www.v2ex.com/go/gstar"
+            }
+        ]
+    }
+]

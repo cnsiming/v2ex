@@ -24,8 +24,12 @@
 		94CC3C1220495A0500C6F490 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1120495A0500C6F490 /* Post.swift */; };
 		94CC3C1420495B1500C6F490 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1320495B1500C6F490 /* Member.swift */; };
 		94CC3C1620495DE400C6F490 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1520495DE400C6F490 /* Node.swift */; };
+		94DD467D2056750E000E0F13 /* NodeListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */; };
 		94EB12332051330900722B99 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12322051330900722B99 /* Comment.swift */; };
 		94EB12352051333C00722B99 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12342051333C00722B99 /* CommentCell.swift */; };
+		94EB123720525F3500722B99 /* NodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB123620525F3500722B99 /* NodeListViewController.swift */; };
+		94EB123C2053801E00722B99 /* nodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 94EB123B2053801E00722B99 /* nodes.json */; };
+		94EB123E205385C900722B99 /* NodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB123D205385C900722B99 /* NodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +54,12 @@
 		94CC3C1120495A0500C6F490 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		94CC3C1320495B1500C6F490 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		94CC3C1520495DE400C6F490 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeListHeaderView.swift; sourceTree = "<group>"; };
 		94EB12322051330900722B99 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		94EB12342051333C00722B99 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		94EB123620525F3500722B99 /* NodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NodeListViewController.swift; path = /Users/wu/Documents/Code/v2ex/v2ex/Controller/NodeListViewController.swift; sourceTree = "<absolute>"; };
+		94EB123B2053801E00722B99 /* nodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nodes.json; sourceTree = "<group>"; };
+		94EB123D205385C900722B99 /* NodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 				94EB12322051330900722B99 /* Comment.swift */,
 				94CC3C1520495DE400C6F490 /* Node.swift */,
 				94CC3C1320495B1500C6F490 /* Member.swift */,
+				94EB123B2053801E00722B99 /* nodes.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,9 +110,9 @@
 		94293F2C204FEAB40015BF16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				94293F17204CE3940015BF16 /* Networking */,
 				94CC3BFF204949A700C6F490 /* HomeViewController.swift */,
 				94293F28204FE24D0015BF16 /* PostDetailViewController.swift */,
+				94EB123620525F3500722B99 /* NodeListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +133,8 @@
 				94293F20204E6A4F0015BF16 /* PostCell.swift */,
 				94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */,
 				94EB12342051333C00722B99 /* CommentCell.swift */,
+				94EB123D205385C900722B99 /* NodeCell.swift */,
+				94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */,
 				94CC3C01204949A700C6F490 /* Main.storyboard */,
 				94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */,
 			);
@@ -151,6 +162,7 @@
 		94CC3BFC204949A700C6F490 /* v2ex */ = {
 			isa = PBXGroup;
 			children = (
+				94293F17204CE3940015BF16 /* Networking */,
 				94293F16204CE36B0015BF16 /* Model */,
 				94293F2E204FEAEB0015BF16 /* View */,
 				94293F2C204FEAB40015BF16 /* Controller */,
@@ -235,6 +247,7 @@
 				94CC3C08204949A700C6F490 /* LaunchScreen.storyboard in Resources */,
 				94CC3C05204949A700C6F490 /* Assets.xcassets in Resources */,
 				94CC3C03204949A700C6F490 /* Main.storyboard in Resources */,
+				94EB123C2053801E00722B99 /* nodes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +321,16 @@
 				94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */,
 				94CC3C1620495DE400C6F490 /* Node.swift in Sources */,
 				94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */,
+				94EB123E205385C900722B99 /* NodeCell.swift in Sources */,
 				94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */,
 				94CC3C1220495A0500C6F490 /* Post.swift in Sources */,
 				94CC3C1420495B1500C6F490 /* Member.swift in Sources */,
+				94DD467D2056750E000E0F13 /* NodeListHeaderView.swift in Sources */,
 				94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */,
 				94EB12332051330900722B99 /* Comment.swift in Sources */,
 				94293F19204CE3AD0015BF16 /* API.swift in Sources */,
 				94EB12352051333C00722B99 /* CommentCell.swift in Sources */,
+				94EB123720525F3500722B99 /* NodeListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

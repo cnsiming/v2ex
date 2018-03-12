@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/wu/Documents/Code/v2ex/v2ex/Model/nodes.json">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/wu/Documents/Code/v2ex/v2ex/Controller/NodeListViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:v2ex.xcodeproj">
    </FileRef>
    <FileRef
