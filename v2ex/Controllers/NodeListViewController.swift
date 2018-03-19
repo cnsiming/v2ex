@@ -19,26 +19,12 @@ class NodeListViewController: UIViewController {
         nodes = NodeType.loadDefaultNodes()
     }
 
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension NodeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return nodes.count
     }
-
-    
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nodes[section].nodes!.count
@@ -60,7 +46,6 @@ extension NodeListViewController: UICollectionViewDelegate, UICollectionViewData
             assert(false, "Unexpected element kind")
         }
     }
-
 }
 
 extension NodeListViewController: UICollectionViewDelegateFlowLayout {

@@ -53,10 +53,18 @@ class Post {
         }
     }
 
-    class func getPostList(of tab: String, completion: @escaping ([Post]) -> Void) {
+    class func getPostList(tab: String, page: Int, completion: @escaping ([Post]) -> Void) {
+        var params = [String: String]()
+        if tab == "all" && page > 0 {
+            params["tab"] = "recent"
+            params["p"] = "\(page)"
+        } else {
+            params["tab"] = tab
+        }
+
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
 
-        Alamofire.request(baseURL, method: .get, parameters: ["tab": tab], encoding: URLEncoding.default, headers: ["User-Agent": userAgent]).responseString { response in
+        Alamofire.request(baseURL, method: .get, parameters: params, encoding: URLEncoding.default, headers: ["User-Agent": userAgent]).responseString { response in
             var posts = [Post]()
             guard let html = response.result.value else {
                 return

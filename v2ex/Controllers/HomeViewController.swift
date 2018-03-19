@@ -11,20 +11,37 @@ import Kingfisher
 
 class HomeViewController: UIViewController {
     var posts = [Post]()
+    private var currentPage = 0
+    private var isLoading = true
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Post.getPostList(of: "all") { results in
-            self.posts = results
-            self.tableView.reloadData()
-        }
-
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
-        tableView.tableFooterView = UIView()    // hide extra separator
+
+        refresh()
+    }
+
+    @objc private func refresh() {
+        Post.getPostList(tab: "all", page: currentPage) { [weak self] results in
+            self?.currentPage = 0
+            self?.posts = results
+            self?.tableView.reloadData()
+        }
+    }
+
+    private func loadNextPage() {
+        loadingIndicator.startAnimating()
+        Post.getPostList(tab: "recent", page: currentPage + 1) { [weak self] results in
+            self?.currentPage += 1
+            self?.posts.append(contentsOf: results)
+            self?.tableView.reloadData()
+            self?.loadingIndicator.stopAnimating()
+        }
     }
 
     private func configure(cell: UITableViewCell, for indexPath: IndexPath) {
@@ -55,6 +72,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
+
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,8 +87,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == posts.count - 1 {
+            loadNextPage()
+        }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
 }
 
