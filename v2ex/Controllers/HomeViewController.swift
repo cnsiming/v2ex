@@ -12,13 +12,16 @@ import Kingfisher
 class HomeViewController: UIViewController {
     var posts = [Post]()
     private var currentPage = 0
-    private var isLoading = true
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl!.attributedTitle = NSAttributedString(string: "下拉刷新...")
+        tableView.refreshControl!.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
@@ -27,10 +30,11 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func refresh() {
-        Post.getPostList(tab: "all", page: currentPage) { [weak self] results in
+        Post.getPostList(tab: "all") { [weak self] results in
             self?.currentPage = 0
             self?.posts = results
             self?.tableView.reloadData()
+            self?.tableView.refreshControl!.endRefreshing()
         }
     }
 

@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="reG-Yr-Zkw">
+                                <view key="tableFooterView" contentMode="scaleToFill" id="reG-Yr-Zkw" userLabel="Footer">
                                     <rect key="frame" x="0.0" y="118" width="375" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -309,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="1365.5999999999999" y="365.66716641679164"/>
         </scene>
-        <!--Node-->
+        <!--节点-->
         <scene sceneID="yiV-K3-dLB">
             <objects>
                 <viewController id="rtE-oL-8nM" customClass="NodeListViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,7 +386,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ai3-yx-Pzt"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Node" id="vEy-Iw-6C4">
+                    <navigationItem key="navigationItem" title="节点" id="vEy-Iw-6C4">
                         <barButtonItem key="leftBarButtonItem" title="👤" id="HRM-zY-hTK"/>
                     </navigationItem>
                     <connections>

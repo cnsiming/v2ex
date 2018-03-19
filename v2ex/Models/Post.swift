@@ -53,7 +53,7 @@ class Post {
         }
     }
 
-    class func getPostList(tab: String, page: Int, completion: @escaping ([Post]) -> Void) {
+    class func getPostList(tab: String, page: Int = 0, completion: @escaping ([Post]) -> Void) {
         var params = [String: String]()
         if tab == "all" && page > 0 {
             params["tab"] = "recent"
