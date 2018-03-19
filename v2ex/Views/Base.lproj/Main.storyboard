@@ -68,7 +68,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shg-3S-lFY">
-                                                    <rect key="frame" x="66" y="8" width="289" height="18.5"/>
+                                                    <rect key="frame" x="66" y="8" width="301" height="18.5"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -80,19 +80,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-gq-ddx">
-                                                    <rect key="frame" x="263" y="69" width="21" height="13"/>
+                                                    <rect key="frame" x="285" y="69" width="21" height="13"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="node" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPc-3I-hTt">
-                                                    <rect key="frame" x="218.5" y="69.5" width="24.5" height="13"/>
+                                                    <rect key="frame" x="250.5" y="69.5" width="24.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-LS-WtV">
-                                                    <rect key="frame" x="304" y="68.5" width="51" height="13"/>
+                                                    <rect key="frame" x="316" y="68.5" width="51" height="13"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -100,17 +100,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PRC-jL-7lI" firstAttribute="centerY" secondItem="KPc-3I-hTt" secondAttribute="centerY" id="0uq-AY-4Gx"/>
-                                                <constraint firstAttribute="trailing" secondItem="W1P-LS-WtV" secondAttribute="trailing" constant="20" id="3KP-OR-yNA"/>
-                                                <constraint firstItem="W1P-LS-WtV" firstAttribute="leading" secondItem="R2o-gq-ddx" secondAttribute="trailing" constant="20" id="4dZ-yM-8Js"/>
+                                                <constraint firstAttribute="trailing" secondItem="W1P-LS-WtV" secondAttribute="trailing" constant="8" id="3KP-OR-yNA"/>
+                                                <constraint firstItem="W1P-LS-WtV" firstAttribute="leading" secondItem="R2o-gq-ddx" secondAttribute="trailing" constant="10" id="4dZ-yM-8Js"/>
                                                 <constraint firstAttribute="bottom" secondItem="W1P-LS-WtV" secondAttribute="bottom" constant="8" id="63N-UJ-7My"/>
                                                 <constraint firstItem="KPc-3I-hTt" firstAttribute="centerY" secondItem="R2o-gq-ddx" secondAttribute="centerY" id="Cs7-Lj-LIq"/>
-                                                <constraint firstItem="R2o-gq-ddx" firstAttribute="leading" secondItem="KPc-3I-hTt" secondAttribute="trailing" constant="20" id="CuE-QA-bvH"/>
+                                                <constraint firstItem="R2o-gq-ddx" firstAttribute="leading" secondItem="KPc-3I-hTt" secondAttribute="trailing" constant="10" id="CuE-QA-bvH"/>
                                                 <constraint firstItem="R2o-gq-ddx" firstAttribute="centerY" secondItem="W1P-LS-WtV" secondAttribute="centerY" id="DXC-yl-SCF"/>
                                                 <constraint firstItem="wUE-hA-p0S" firstAttribute="top" secondItem="Kf4-w9-ix6" secondAttribute="top" constant="8" id="E1W-C1-vFI"/>
                                                 <constraint firstItem="Shg-3S-lFY" firstAttribute="leading" secondItem="wUE-hA-p0S" secondAttribute="trailing" constant="10" id="Iox-3L-uf4"/>
                                                 <constraint firstItem="PRC-jL-7lI" firstAttribute="leading" secondItem="Shg-3S-lFY" secondAttribute="leading" id="NjS-1Z-PNq"/>
                                                 <constraint firstItem="wUE-hA-p0S" firstAttribute="leading" secondItem="Kf4-w9-ix6" secondAttribute="leading" constant="8" id="PAc-lq-2Vn"/>
-                                                <constraint firstAttribute="trailing" secondItem="Shg-3S-lFY" secondAttribute="trailing" constant="20" id="S47-vh-nTr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Shg-3S-lFY" secondAttribute="trailing" constant="8" id="S47-vh-nTr"/>
                                                 <constraint firstItem="W1P-LS-WtV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Shg-3S-lFY" secondAttribute="bottom" priority="250" constant="10" id="VtR-vK-7dy"/>
                                                 <constraint firstItem="KPc-3I-hTt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PRC-jL-7lI" secondAttribute="trailing" constant="20" id="kF3-HB-EF0"/>
                                                 <constraint firstItem="Shg-3S-lFY" firstAttribute="top" secondItem="Kf4-w9-ix6" secondAttribute="top" constant="8" id="khQ-2M-hII"/>

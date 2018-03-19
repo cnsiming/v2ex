@@ -12,6 +12,7 @@ class PostDetailViewController: UIViewController {
 
     var post: Post?
     var postDetail: PostDetail?
+    var currentPage = 1
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -73,6 +74,19 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath)
             configure(cell: cell, for: indexPath)
             return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == postDetail?.comments.count, currentPage < postDetail!.commentCount / 100 + 1 {
+            PostDetail.getPostDetail(url: post!.url!, page: currentPage + 1) { [weak self] results in
+                if let comments = results?.comments {
+                    self?.postDetail?.comments.append(contentsOf: comments)
+                    self?.currentPage += 1
+                    self?.postDetail?.commentCount = results!.commentCount
+                    self?.tableView.reloadData()
+                }
+            }
         }
     }
 }
