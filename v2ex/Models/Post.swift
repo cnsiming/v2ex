@@ -23,7 +23,12 @@ class Post {
     var commentUser: String?
     var commentCount: String?
 
-    init?(html: String) {
+    init?(html: String, isFromNode: Bool) {
+        var timeXpath = "//table/tr/td[3]/span[2]/text()[3]"
+        if isFromNode {
+            timeXpath = "//table/tr/td[3]/span[2]/text()"
+        }
+
         do {
             let doc = try HTML(html: html, encoding: .utf8)
 
@@ -43,7 +48,7 @@ class Post {
             self.commentUser = doc.xpath("//table/tr/td[3]/span[2]/strong[2]").first?.content
             self.commentCount = doc.xpath("//table/tr/td[4]/a").first?.content
 
-            if let timeString = doc.xpath("//table/tr/td[3]/span[2]/text()[3]").first?.content {
+            if let timeString = doc.xpath(timeXpath).first?.content {
                 self.commentTime = timeString.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
             }
 
@@ -53,10 +58,17 @@ class Post {
         }
     }
 
-    class func getPostList(tab: String, page: Int = 0, completion: @escaping ([Post]) -> Void) {
+    class func getPostList(tab: String? = nil, node: Node? = nil, page: Int = 1, completion: @escaping ([Post]) -> Void) {
+        var url = baseURL
         var params = [String: String]()
-        if tab == "all" && page > 0 {
-            params["tab"] = "recent"
+        var xpath = "//div[@class='cell item']"
+
+        if let node = node {
+            xpath = "//div[@id='TopicsNode']/div"
+            url += node.url ?? ""
+            params["p"] = "\(page)"
+        } else if tab == "recent" {
+            url += "/recent"
             params["p"] = "\(page)"
         } else {
             params["tab"] = tab
@@ -64,15 +76,15 @@ class Post {
 
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
 
-        Alamofire.request(baseURL, method: .get, parameters: params, encoding: URLEncoding.default, headers: ["User-Agent": userAgent]).responseString { response in
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: ["User-Agent": userAgent]).responseString { response in
             var posts = [Post]()
             guard let html = response.result.value else {
                 return
             }
             do {
                 let doc = try HTML(html: html, encoding: .utf8)
-                for element in doc.xpath("//div[@class='cell item']") {
-                    if let post = Post(html: element.toHTML!) {
+                for element in doc.xpath(xpath) {
+                    if let post = Post(html: element.toHTML!, isFromNode: node != nil) {
                         posts.append(post)
                     }
                 }

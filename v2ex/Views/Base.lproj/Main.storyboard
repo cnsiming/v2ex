@@ -30,17 +30,17 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="reG-Yr-Zkw" userLabel="Footer">
-                                    <rect key="frame" x="0.0" y="118" width="375" height="20"/>
+                                    <rect key="frame" x="0.0" y="118" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL0-TG-gut">
-                                            <rect key="frame" x="161.5" y="-0.5" width="52" height="21"/>
+                                            <rect key="frame" x="161.5" y="11.5" width="52" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rFu-T7-bmb">
-                                            <rect key="frame" x="121.5" y="0.0" width="20" height="20"/>
+                                            <rect key="frame" x="121.5" y="12" width="20" height="20"/>
                                             <color key="color" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -353,6 +353,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="nodeName" destination="IQg-wx-Cu2" id="7jk-NV-eUg"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="ShowNodeDetail" id="qUG-pD-Ks6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -496,4 +497,7 @@
         <image name="avatar_48" width="48" height="48"/>
         <image name="avatar_73" width="73" height="73"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qUG-pD-Ks6"/>
+    </inferredMetricsTieBreakers>
 </document>

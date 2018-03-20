@@ -27,6 +27,13 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        avatar.image = nil
+        title.text = nil
+        username.text = nil
+        node.text = nil
+        updateTime.text = nil
+        comments.text = nil
+
         avatar.layer.cornerRadius = avatar.frame.width / 2
         avatar.layer.masksToBounds = true
     }
@@ -37,6 +44,7 @@ class PostCell: UITableViewCell {
         avatar.image = nil
         title.text = nil
         username.text = nil
+        node.text = nil
         updateTime.text = nil
         comments.text = nil
     }

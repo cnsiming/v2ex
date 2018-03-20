@@ -19,6 +19,15 @@ class NodeListViewController: UIViewController {
         nodes = NodeType.loadDefaultNodes()
     }
 
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowNodeDetail" {
+            let homeVC = segue.destination as! HomeViewController
+            let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell)!
+            homeVC.node = nodes[indexPath.section].nodes![indexPath.row]
+        }
+    }
+
 }
 
 extension NodeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
