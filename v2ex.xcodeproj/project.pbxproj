@@ -15,6 +15,7 @@
 		94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F26204FE07F0015BF16 /* PostDetail.swift */; };
 		94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F28204FE24D0015BF16 /* PostDetailViewController.swift */; };
 		94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */; };
+		943AC00B20623A530083697B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943AC00A20623A530083697B /* LoginViewController.swift */; };
 		947E0040205B729B0093E083 /* NodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947E003F205B729B0093E083 /* NodeListViewController.swift */; };
 		94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3BFD204949A700C6F490 /* AppDelegate.swift */; };
 		94CC3C00204949A700C6F490 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3BFF204949A700C6F490 /* HomeViewController.swift */; };
@@ -22,7 +23,7 @@
 		94CC3C05204949A700C6F490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94CC3C04204949A700C6F490 /* Assets.xcassets */; };
 		94CC3C08204949A700C6F490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */; };
 		94CC3C1220495A0500C6F490 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1120495A0500C6F490 /* Post.swift */; };
-		94CC3C1420495B1500C6F490 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1320495B1500C6F490 /* Member.swift */; };
+		94CC3C1420495B1500C6F490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1320495B1500C6F490 /* User.swift */; };
 		94CC3C1620495DE400C6F490 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CC3C1520495DE400C6F490 /* Node.swift */; };
 		94DD467D2056750E000E0F13 /* NodeListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */; };
 		94EB12332051330900722B99 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB12322051330900722B99 /* Comment.swift */; };
@@ -42,6 +43,7 @@
 		94293F26204FE07F0015BF16 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		94293F28204FE24D0015BF16 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
+		943AC00A20623A530083697B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		947E003F205B729B0093E083 /* NodeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeListViewController.swift; sourceTree = "<group>"; };
 		94CC3BFA204949A700C6F490 /* v2ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v2ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94CC3BFD204949A700C6F490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		94CC3C07204949A700C6F490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94CC3C09204949A700C6F490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94CC3C1120495A0500C6F490 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		94CC3C1320495B1500C6F490 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		94CC3C1320495B1500C6F490 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		94CC3C1520495DE400C6F490 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeListHeaderView.swift; sourceTree = "<group>"; };
 		94EB12322051330900722B99 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 				94293F26204FE07F0015BF16 /* PostDetail.swift */,
 				94EB12322051330900722B99 /* Comment.swift */,
 				94CC3C1520495DE400C6F490 /* Node.swift */,
-				94CC3C1320495B1500C6F490 /* Member.swift */,
+				94CC3C1320495B1500C6F490 /* User.swift */,
 				94EB123B2053801E00722B99 /* nodes.json */,
 			);
 			path = Models;
@@ -103,6 +105,7 @@
 				94CC3BFF204949A700C6F490 /* HomeViewController.swift */,
 				94293F28204FE24D0015BF16 /* PostDetailViewController.swift */,
 				947E003F205B729B0093E083 /* NodeListViewController.swift */,
+				943AC00A20623A530083697B /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,13 +311,14 @@
 				94293F21204E6A4F0015BF16 /* PostCell.swift in Sources */,
 				94CC3C00204949A700C6F490 /* HomeViewController.swift in Sources */,
 				94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */,
+				943AC00B20623A530083697B /* LoginViewController.swift in Sources */,
 				94CC3C1620495DE400C6F490 /* Node.swift in Sources */,
 				94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */,
 				94EB123E205385C900722B99 /* NodeCell.swift in Sources */,
 				94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */,
 				94CC3C1220495A0500C6F490 /* Post.swift in Sources */,
 				947E0040205B729B0093E083 /* NodeListViewController.swift in Sources */,
-				94CC3C1420495B1500C6F490 /* Member.swift in Sources */,
+				94CC3C1420495B1500C6F490 /* User.swift in Sources */,
 				94DD467D2056750E000E0F13 /* NodeListHeaderView.swift in Sources */,
 				94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */,
 				94EB12332051330900722B99 /* Comment.swift in Sources */,

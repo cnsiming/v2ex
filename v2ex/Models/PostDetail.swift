@@ -39,7 +39,7 @@ class PostDetail {
         let params = ["p": page]
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
         var postDetail: PostDetail?
-        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default ,headers: ["User-Agent": userAgent]).validate().responseString { response in
+        Alamofire.request(url, parameters: params, headers: ["User-Agent": userAgent]).validate().responseString { response in
             if let html = response.result.value {
                 postDetail = PostDetail(by: html)
             }
