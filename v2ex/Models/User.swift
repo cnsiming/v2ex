@@ -44,7 +44,7 @@ class User {
         }
     }
 
-    class func login(_ username: String, password: String, captcha: String, once: String, completion: @escaping (Bool) -> Void) {
+    class func login(_ username: String, password: String, captcha: String, once: String, completion: @escaping (Bool, String) -> Void) {
         let url = baseURL + "/signin"
         let params: Parameters = [
             loginParams["username"]!: username,
@@ -57,6 +57,7 @@ class User {
 
         Alamofire.request(url, method: .post, parameters: params, headers: headers).validate().responseString { response in
             var success = false
+            var error = "登录异常，请重试"
             if let html = response.result.value {
                 print(html)
                 do {
@@ -64,12 +65,14 @@ class User {
                     // 页面显示“x条未读提醒”则证明登录成功
                     if let _ = doc.xpath("//a[@href='/notifications']").first?.content {
                         success = true
+                    } else if let problem = doc.xpath("//div[@class='problem']/ul/li").first?.content {
+                        error = problem
                     }
                 } catch let error as NSError {
                     print(error.userInfo)
                 }
             }
-            completion(success)
+            completion(success, error)
         }
     }
 

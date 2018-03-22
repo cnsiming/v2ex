@@ -339,7 +339,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="22"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -353,14 +353,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rWK-XD-M6l">
-                                                    <rect key="frame" x="27.5" y="6" width="320" height="32"/>
+                                                    <rect key="frame" x="27.5" y="5.5" width="320" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="J8v-pt-SHy"/>
                                                         <constraint firstAttribute="width" constant="320" id="hYh-ma-G18"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="username"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -377,14 +377,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-SN-dTj">
-                                                    <rect key="frame" x="27.5" y="6" width="320" height="32"/>
+                                                    <rect key="frame" x="27.5" y="5.5" width="320" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="R67-G9-ALY"/>
                                                         <constraint firstAttribute="width" constant="320" id="gfY-P6-HVf"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -401,14 +401,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入下图中的验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xB-ZL-sDC">
-                                                    <rect key="frame" x="27.5" y="6" width="320" height="32"/>
+                                                    <rect key="frame" x="27.5" y="5.5" width="320" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="S4u-Jg-UyV"/>
                                                         <constraint firstAttribute="width" constant="320" id="Toj-4D-CeU"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="username"/>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -445,18 +445,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCI-6E-Pa9">
-                                                    <rect key="frame" x="148" y="24" width="80" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="30"/>
-                                                    <state key="normal" title=" 登录 ">
+                                                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCI-6E-Pa9">
+                                                    <rect key="frame" x="113" y="21" width="150" height="60"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="prs-oH-Bkb"/>
+                                                        <constraint firstAttribute="height" constant="60" id="tlH-sx-n7f"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="36"/>
+                                                    <color key="tintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="登 录">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="titleShadowColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="login:" destination="14j-Jc-tiH" eventType="touchUpInside" id="Ayb-41-bAg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LCI-6E-Pa9" firstAttribute="centerX" secondItem="7T2-1F-eAb" secondAttribute="centerX" id="VmQ-Va-d87"/>
+                                                <constraint firstItem="LCI-6E-Pa9" firstAttribute="centerY" secondItem="7T2-1F-eAb" secondAttribute="centerY" id="cub-PF-tbE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -468,13 +483,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="FE1-zy-VAE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="39U-Xf-Oiu"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="39U-Xf-Oiu">
+                            <connections>
+                                <action selector="close" destination="14j-Jc-tiH" id="3qI-Vz-crs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="captcha" destination="8xB-ZL-sDC" id="AXn-co-7Db"/>
                         <outlet property="captchaImg" destination="VI0-Yy-Qsv" id="rOm-0v-enH"/>
-                        <outlet property="password" destination="oKB-SN-dTj" id="CF7-ad-a51"/>
-                        <outlet property="username" destination="rWK-XD-M6l" id="XCt-gS-F35"/>
+                        <outlet property="captchaTextField" destination="8xB-ZL-sDC" id="AXn-co-7Db"/>
+                        <outlet property="passwordTextField" destination="oKB-SN-dTj" id="CF7-ad-a51"/>
+                        <outlet property="usernameTextField" destination="rWK-XD-M6l" id="XCt-gS-F35"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAc-SF-03T" userLabel="First Responder" sceneMemberID="firstResponder"/>

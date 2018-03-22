@@ -11,9 +11,9 @@ import Kingfisher
 
 class LoginViewController: UITableViewController {
 
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var captcha: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var captchaTextField: UITextField!
     @IBOutlet weak var captchaImg: UIImageView!
 
     private var once: String? {
@@ -27,6 +27,10 @@ class LoginViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        captchaTextField.delegate = self
+
         User.login { [weak self] once in
             self?.once = once
         }
@@ -34,22 +38,33 @@ class LoginViewController: UITableViewController {
     }
 
     @IBAction func login(_ sender: UIButton) {
-        guard let username = username.text, !username.isEmpty else {
+        guard let username = usernameTextField.text, !username.isEmpty else {
+            usernameTextField.becomeFirstResponder()
             return
         }
-        guard let password = password.text, !password.isEmpty else {
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            passwordTextField.becomeFirstResponder()
             return
         }
-        guard let captcha = captcha.text, !captcha.isEmpty else {
+        guard let captcha = captchaTextField.text, !captcha.isEmpty else {
+            captchaTextField.becomeFirstResponder()
             return
         }
 
 
-        User.login(username, password: password, captcha: captcha, once: once!) { [weak self] success in
+        User.login(username, password: password, captcha: captcha, once: once!) { [weak self] (success, error) in
             if success {
                 self?.dismiss(animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "登录失败", message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "确认", style: .default, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+
+    @IBAction func close() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func loadImage(_ once: String) {
@@ -65,4 +80,11 @@ class LoginViewController: UITableViewController {
         }
     }
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
