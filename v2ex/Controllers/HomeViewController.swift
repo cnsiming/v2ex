@@ -26,6 +26,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
+    @IBAction func toggleMenu(_ sender: UIBarButtonItem) {
+        let containerVC = self.navigationController?.parent?.parent as! ContainerViewController
+        containerVC.toggleSideBar()
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

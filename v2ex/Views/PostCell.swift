@@ -36,6 +36,7 @@ class PostCell: UITableViewCell {
 
         avatar.layer.cornerRadius = avatar.frame.width / 2
         avatar.layer.masksToBounds = true
+        avatar.layer.shouldRasterize = true
     }
 
     override func prepareForReuse() {

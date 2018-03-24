@@ -9,7 +9,7 @@
 import Alamofire
 import Kanna
 
-var loginParams = [
+fileprivate var loginParams = [
     "username": "",
     "password": "",
     "captcha": "",
@@ -17,13 +17,21 @@ var loginParams = [
     "next": "next"
 ]
 
-class User {
-    var username = ""
-    var avatarMini = ""
-    var avatarNormal = ""
-    var avatarLarge = ""
+struct User {
+    static var shared = User()
 
-    class func login(completion: @escaping (String?) -> Void) {
+    var username: String? = nil
+    var avatar: String? = nil
+    var once: String? = nil
+    var isLogin: Bool = false
+    var balance : String? = nil
+//    var nodeCollection = "" // 节点收藏 /my/nodes
+//    var postCollection = "" // 主题收藏 /my/topics
+//    var following = "" // 特别关注 /my/following
+//    var posts: [Post] // url: /member/hebwjb/topics
+//    var comments: [Comment] // url: /member/hebwjb/replies
+
+    static func login(completion: @escaping (String?) -> Void) {
         let url = baseURL + "/signin"
 
         Alamofire.request(url).validate().responseString { response in
@@ -44,7 +52,8 @@ class User {
         }
     }
 
-    class func login(_ username: String, password: String, captcha: String, once: String, completion: @escaping (Bool, String) -> Void) {
+    static func login(_ username: String, password: String, captcha: String, once: String, completion: @escaping (Bool, String) -> Void) {
+
         let url = baseURL + "/signin"
         let params: Parameters = [
             loginParams["username"]!: username,
@@ -56,15 +65,21 @@ class User {
         let headers = ["Host":"www.v2ex.com","Origin":"http://www.v2ex.com","Referer":"http://www.v2ex.com/signin","User-Agent":"Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/32.0.1700.107 Chrome/32.0.1700.107 Safari/537.36"]
 
         Alamofire.request(url, method: .post, parameters: params, headers: headers).validate().responseString { response in
-            var success = false
             var error = "登录异常，请重试"
             if let html = response.result.value {
-                print(html)
                 do {
                     let doc = try HTML(html: html, encoding: .utf8)
-                    // 页面显示“x条未读提醒”则证明登录成功
-                    if let _ = doc.xpath("//a[@href='/notifications']").first?.content {
-                        success = true
+                    // 页面右侧显示用户头像则证明登录成功
+                    if let img = doc.xpath("//*[@id='Rightbar']/div[2]/div[1]/table[1]/tr/td[1]/a/img").first?["src"] {
+                        shared.username = username
+                        shared.avatar = "https:\(img)".replacingOccurrences(of: "normal", with: "large")
+                        shared.once = once
+                        shared.isLogin = true
+                        if let gold = doc.xpath("//a[@class='balance_area']/text()[1]").first?.content,
+                            let silver = doc.xpath("//a[@class='balance_area']/text()[2]").first?.content,
+                            let bronze = doc.xpath("//a[@class='balance_area']/text()[3]").first?.content {
+                                shared.balance = "🥇\(gold)🥈\(silver)🥉\(bronze)"
+                        }
                     } else if let problem = doc.xpath("//div[@class='problem']/ul/li").first?.content {
                         error = problem
                     }
@@ -72,8 +87,19 @@ class User {
                     print(error.userInfo)
                 }
             }
-            completion(success, error)
+            completion(shared.isLogin, error)
         }
+    }
+
+    static func logout() {
+        let storage = HTTPCookieStorage.shared
+        if let cookies = storage.cookies {
+            for cookie in cookies {
+                storage.deleteCookie(cookie)
+            }
+        }
+
+        User.shared = User()
     }
 
 }

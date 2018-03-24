@@ -63,8 +63,12 @@ class LoginViewController: UITableViewController {
         }
     }
 
-    @IBAction func close() {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancel() {
+        if let nav = navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
     private func loadImage(_ once: String) {
