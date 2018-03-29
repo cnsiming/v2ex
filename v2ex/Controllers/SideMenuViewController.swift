@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 class SideMenuViewController: UIViewController {
+    
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var loginButton: UIButton!

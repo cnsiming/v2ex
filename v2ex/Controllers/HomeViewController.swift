@@ -10,18 +10,15 @@ import UIKit
 import Kingfisher
 
 class HomeViewController: UIViewController {
+
     var posts = [Post]()
-    var node: Node? {
+    var pageType: PageType = .home(.all) {
         didSet {
-            if let node = node {
-                navigationItem.title = node.name
-                navigationItem.leftBarButtonItem = nil
-            } else {
-                navigationItem.title = "V2EX"
-            }
+            refresh()
         }
     }
     private var currentPage = 1
+
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -46,7 +43,7 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func refresh() {
-        Post.getPostList(tab: "all", node: node) { [weak self] results in
+        Post.getPostList(from: pageType) { [weak self] results in
             self?.currentPage = 1
             self?.posts = results
             self?.tableView.reloadData()
@@ -56,7 +53,7 @@ class HomeViewController: UIViewController {
 
     private func loadNextPage() {
         loadingIndicator.startAnimating()
-        Post.getPostList(tab: "recent", node: node, page: currentPage) { [weak self] results in
+        Post.getPostList(from: pageType, pageNum: currentPage) { [weak self] results in
             if results.count > 0 {
                 self?.currentPage += 1
                 self?.posts.append(contentsOf: results)
@@ -98,6 +95,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }

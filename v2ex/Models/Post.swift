@@ -13,6 +13,7 @@ import Alamofire
 let baseURL = "https://www.v2ex.com"
 
 class Post {
+
     var url: String?
     var avatar: String?
     var title: String?
@@ -23,10 +24,14 @@ class Post {
     var commentUser: String?
     var commentCount: String?
 
-    init?(html: String, isFromNode: Bool) {
-        var timeXpath = "//table/tr/td[3]/span[2]/text()[3]"
-        if isFromNode {
-            timeXpath = "//table/tr/td[3]/span[2]/text()"
+    init?(forPage pageType: PageType, html: String) {
+        var timeXPath: String
+
+        switch pageType {
+        case .node(_):
+            timeXPath = "//table/tr/td[3]/span[2]/text()"
+        default:
+            timeXPath = "//table/tr/td[3]/span[2]/text()[3]"
         }
 
         do {
@@ -48,30 +53,36 @@ class Post {
             self.commentUser = doc.xpath("//table/tr/td[3]/span[2]/strong[2]").first?.content
             self.commentCount = doc.xpath("//table/tr/td[4]/a").first?.content
 
-            if let timeString = doc.xpath(timeXpath).first?.content {
+            if let timeString = doc.xpath(timeXPath).first?.content {
                 self.commentTime = timeString.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
             }
-
         } catch let error as NSError {
             print(error.userInfo)
             return nil
         }
     }
 
-    class func getPostList(tab: String? = nil, node: Node? = nil, page: Int = 1, completion: @escaping ([Post]) -> Void) {
+    class func getPostList(from pageType: PageType, pageNum: Int = 1, completion: @escaping ([Post]) -> Void) {
         var url = baseURL
         var params = [String: String]()
         var xpath = "//div[@class='cell item']"
 
-        if let node = node {
+        switch pageType {
+        case .home(let tab):
+            if tab.rawValue == "all" && pageNum > 1 {
+                url += "/recent"
+                params["p"] = "\(pageNum)"
+            } else {
+                params["tab"] = tab.rawValue
+            }
+        case .node(let node):
             xpath = "//div[@id='TopicsNode']/div"
             url += node.url ?? ""
-            params["p"] = "\(page)"
-        } else if tab == "recent" {
-            url += "/recent"
-            params["p"] = "\(page)"
-        } else {
-            params["tab"] = tab
+            params["p"] = "\(pageNum)"
+        case .collection(let collection):
+            url += collection.rawValue
+        default:
+            print(pageType)
         }
 
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
@@ -84,7 +95,7 @@ class Post {
             do {
                 let doc = try HTML(html: html, encoding: .utf8)
                 for element in doc.xpath(xpath) {
-                    if let post = Post(html: element.toHTML!, isFromNode: node != nil) {
+                    if let post = Post(forPage: pageType, html: element.toHTML!) {
                         posts.append(post)
                     }
                 }

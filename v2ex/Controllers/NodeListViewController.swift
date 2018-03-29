@@ -24,13 +24,17 @@ class NodeListViewController: UIViewController {
         if segue.identifier == "ShowNodeDetail" {
             let homeVC = segue.destination as! HomeViewController
             let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell)!
-            homeVC.node = nodes[indexPath.section].nodes![indexPath.row]
+            let node = nodes[indexPath.section].nodes![indexPath.row]
+            homeVC.pageType = .node(node)
+            homeVC.navigationItem.leftBarButtonItem = nil
+            homeVC.navigationItem.title = node.name
         }
     }
 
 }
 
 extension NodeListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return nodes.count
     }
@@ -58,6 +62,7 @@ extension NodeListViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 extension NodeListViewController: UICollectionViewDelegateFlowLayout {
+    
     // 根据label.text的内容设置UICollectionViewCell的宽度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let nodeName = nodes[indexPath.section].nodes?[indexPath.row].name as NSString? {

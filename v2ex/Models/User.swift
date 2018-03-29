@@ -18,6 +18,7 @@ fileprivate var loginParams = [
 ]
 
 struct User {
+
     static var shared = User()
 
     var username: String? = nil
@@ -25,11 +26,6 @@ struct User {
     var once: String? = nil
     var isLogin: Bool = false
     var balance : String? = nil
-//    var nodeCollection = "" // 节点收藏 /my/nodes
-//    var postCollection = "" // 主题收藏 /my/topics
-//    var following = "" // 特别关注 /my/following
-//    var posts: [Post] // url: /member/hebwjb/topics
-//    var comments: [Comment] // url: /member/hebwjb/replies
 
     static func login(completion: @escaping (String?) -> Void) {
         let url = baseURL + "/signin"
@@ -53,7 +49,6 @@ struct User {
     }
 
     static func login(_ username: String, password: String, captcha: String, once: String, completion: @escaping (Bool, String) -> Void) {
-
         let url = baseURL + "/signin"
         let params: Parameters = [
             loginParams["username"]!: username,
@@ -62,7 +57,12 @@ struct User {
             "once": once,
             "next": "/"
         ]
-        let headers = ["Host":"www.v2ex.com","Origin":"http://www.v2ex.com","Referer":"http://www.v2ex.com/signin","User-Agent":"Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/32.0.1700.107 Chrome/32.0.1700.107 Safari/537.36"]
+        let headers = [
+            "Host": "www.v2ex.com",
+            "Origin": "http://www.v2ex.com",
+            "Referer": "http://www.v2ex.com/signin",
+            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+        ]
 
         Alamofire.request(url, method: .post, parameters: params, headers: headers).validate().responseString { response in
             var error = "登录异常，请重试"

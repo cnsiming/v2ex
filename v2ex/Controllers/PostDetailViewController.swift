@@ -57,6 +57,7 @@ class PostDetailViewController: UIViewController {
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let postDetail = postDetail {
             return postDetail.comments.count + 1
