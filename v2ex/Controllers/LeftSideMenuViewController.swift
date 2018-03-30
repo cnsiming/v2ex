@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class SideMenuViewController: UIViewController {
+class LeftSideMenuViewController: UIViewController {
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var username: UILabel!
@@ -29,9 +29,9 @@ class SideMenuViewController: UIViewController {
         refresh()
     }
 
-    class func storyboardInstance() -> SideMenuViewController {
-        let storyboard = UIStoryboard.init(name: "SideMenu", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! SideMenuViewController
+    class func storyboardInstance() -> LeftSideMenuViewController {
+        let storyboard = UIStoryboard.init(name: "LeftSideMenu", bundle: nil)
+        return storyboard.instantiateInitialViewController() as! LeftSideMenuViewController
     }
 
     private func refresh() {

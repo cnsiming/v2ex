@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         let tabBarVC = mainSB.instantiateInitialViewController() as! UITabBarController
-        let sideMenuVC = SideMenuViewController.storyboardInstance()
+        let leftSideMenuVC = LeftSideMenuViewController.storyboardInstance()
+        let rightSideMenuVC = RightSideMenuViewController.storyboardInstance()
 
-        let containerVC = ContainerViewController(sideMenu: sideMenuVC, tabBar: tabBarVC)
+        let containerVC = ContainerViewController(leftSideMenu: leftSideMenuVC, rightSideMenu: rightSideMenuVC, tabBar: tabBarVC)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = containerVC

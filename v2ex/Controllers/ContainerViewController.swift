@@ -9,17 +9,26 @@
 import UIKit
 
 class ContainerViewController: UIViewController {
-    var sideMenuViewController: UIViewController
-    var tabBarViewController: UITabBarController
 
-    let menuWidth: CGFloat = UIScreen.main.bounds.width * 0.8
+    var leftSideMenuVC: UIViewController
+    var rightSideMenuVC: UITableViewController
+    var tabBarVC: UITabBarController
+
+    let leftWidth: CGFloat = UIScreen.main.bounds.width * 0.8
+    let rightWidth: CGFloat = 100
     let animationDuration: TimeInterval = 0.5
 
-    var isOpening = false
+    var position: Position = .center
+    enum Position {
+        case left
+        case center
+        case right
+    }
 
-    init(sideMenu: UIViewController, tabBar: UITabBarController) {
-        self.sideMenuViewController = sideMenu
-        self.tabBarViewController = tabBar
+    init(leftSideMenu: UIViewController, rightSideMenu: UITableViewController, tabBar: UITabBarController) {
+        self.leftSideMenuVC = leftSideMenu
+        self.rightSideMenuVC = rightSideMenu
+        self.tabBarVC = tabBar
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,32 +40,60 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addChildViewController(sideMenuViewController)
-        view.addSubview(sideMenuViewController.view)
-        sideMenuViewController.didMove(toParentViewController: self)
+        addChildViewController(leftSideMenuVC)
+        view.addSubview(leftSideMenuVC.view)
+        leftSideMenuVC.didMove(toParentViewController: self)
 
-        addChildViewController(tabBarViewController)
-        view.addSubview(tabBarViewController.view)
-        sideMenuViewController.didMove(toParentViewController: self)
+        addChildViewController(rightSideMenuVC)
+        view.addSubview(rightSideMenuVC.view)
+        rightSideMenuVC.didMove(toParentViewController: self)
 
-        sideMenuViewController.view.frame = CGRect(x: -menuWidth, y: 0, width: menuWidth, height: view.frame.height)
+        addChildViewController(tabBarVC)
+        view.addSubview(tabBarVC.view)
+        leftSideMenuVC.didMove(toParentViewController: self)
+
+        leftSideMenuVC.view.frame = CGRect(x: -leftWidth, y: 0, width: leftWidth, height: view.frame.height)
+        rightSideMenuVC.view.frame = CGRect(x: view.frame.width, y: 0, width: rightWidth, height: view.frame.height)
     }
 
-    func toggleSideBar() {
-        UIView.animate(withDuration: animationDuration, animations: {
+    func toggleLeftSideMenu() {
+        switch self.position {
+        case .center:
+            self.position = .left
+        default:
+            self.position = .center
+        }
+
+        UIView.animate(withDuration: animationDuration) {
             self.setMenu()
-        }) { _ in
-            self.isOpening = !self.isOpening
+        }
+    }
+
+    func toggleRightSideMenu() {
+        switch position {
+        case .center:
+            position = .right
+        default:
+            position = .center
+        }
+
+        UIView.animate(withDuration: animationDuration) {
+            self.setMenu()
         }
     }
 
     private func setMenu() {
-        if isOpening {
-            sideMenuViewController.view.frame.origin.x = -menuWidth
-            tabBarViewController.view.frame.origin.x = 0
-        } else {
-            sideMenuViewController.view.frame.origin.x = 0
-            tabBarViewController.view.frame.origin.x = menuWidth
+        switch position {
+        case .left:
+            leftSideMenuVC.view.frame.origin.x = 0
+            tabBarVC.view.frame.origin.x = leftWidth
+        case .center:
+            leftSideMenuVC.view.frame.origin.x = -leftWidth
+            rightSideMenuVC.view.frame.origin.x = view.frame.width
+            tabBarVC.view.frame.origin.x = 0
+        case .right:
+            rightSideMenuVC.view.frame.origin.x = view.frame.width - rightWidth
+            tabBarVC.view.frame.origin.x = -rightWidth
         }
     }
 
