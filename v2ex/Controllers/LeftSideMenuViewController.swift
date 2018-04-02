@@ -1,5 +1,5 @@
 //
-//  SideMenuViewController.swift
+//  LeftSideMenuViewController.swift
 //  v2ex
 //
 //  Created by wjb on 2018/3/22.
@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class LeftSideMenuViewController: UIViewController {
-    
+
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var loginButton: UIButton!

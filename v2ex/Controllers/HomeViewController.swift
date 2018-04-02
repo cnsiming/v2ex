@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  v2ex
 //
 //  Created by wjb on 2018/3/2.
@@ -117,7 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == posts.count - 1 {
             switch pageType {
-            case .home(.all), .node(_), .collection(_), .my(_):
+            case .home(.all), .node(_), .collection(.following), .my(_):
                 loadNextPage()
             default:
                 tableView.tableFooterView?.isHidden = true

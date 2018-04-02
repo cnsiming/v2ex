@@ -10,7 +10,7 @@ import UIKit
 
 class RightSideMenuViewController: UITableViewController {
 
-    private let tabs: [(tab: PageType.Tab, description: String)] = [
+    private let tabs: [(tab: PageType.Tab, title: String)] = [
         (.all, "全部"),
         (.tech, "技术"),
         (.creative, "创意"),
@@ -35,12 +35,18 @@ class RightSideMenuViewController: UITableViewController {
         return (storyboard.instantiateInitialViewController() as! UITableViewController)
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    private func open(tab: PageType.Tab, title: String) {
+        if let containerVC = self.parent as? ContainerViewController,
+            let navVC = containerVC.tabBarVC.viewControllers?.first as? UINavigationController,
+            let homeVC = navVC.viewControllers.first as? HomeViewController
+        {
+            containerVC.toggleRightSideMenu()
+            homeVC.pageType = .home(tab)
+            homeVC.navigationItem.rightBarButtonItem?.title = title
+        }
     }
+
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tabs.count
@@ -48,22 +54,14 @@ class RightSideMenuViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TabCell", for: indexPath)
-        cell.textLabel?.text = tabs[indexPath.row].description
+        cell.textLabel?.text = tabs[indexPath.row].title
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let containerVC = self.parent as? ContainerViewController,
-            let navVC = containerVC.tabBarVC.viewControllers?.first as? UINavigationController,
-            let homeVC = navVC.viewControllers.first as? HomeViewController
-        {
-            containerVC.toggleRightSideMenu()
-            let tab = tabs[indexPath.row]
-            homeVC.pageType = .home(tab.tab)
-            homeVC.navigationItem.rightBarButtonItem?.title = tab.description
-        }
-
+        let tab = tabs[indexPath.row]
+        open(tab: tab.tab, title: tab.title)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

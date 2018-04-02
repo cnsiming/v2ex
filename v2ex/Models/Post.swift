@@ -64,23 +64,24 @@ class Post {
 
     class func getPostList(from pageType: PageType, pageNum: Int = 1, completion: @escaping ([Post]) -> Void) {
         var url = baseURL
-        var params = [String: String]()
+        var params = ["p": "\(pageNum)"]
         var xpath = "//div[@class='cell item']"
 
         switch pageType {
         case .home(let tab):
             if tab.rawValue == "all" && pageNum > 1 {
                 url += "/recent"
-                params["p"] = "\(pageNum)"
             } else {
                 params["tab"] = tab.rawValue
+                params.removeValue(forKey: "p")
             }
         case .node(let node):
             xpath = "//div[@id='TopicsNode']/div"
             url += node.url ?? ""
-            params["p"] = "\(pageNum)"
         case .collection(let collection):
             url += collection.rawValue
+        case .my(.posts(let myPostsUrl)):
+            url += myPostsUrl
         default:
             print(pageType)
         }
