@@ -57,7 +57,9 @@ class HomeViewController: UIViewController {
     }
 
     private func loadNextPage() {
+        tableView.tableFooterView?.isHidden = false
         loadingIndicator.startAnimating()
+
         Post.getPostList(from: pageType, pageNum: currentPage) { [weak self] results in
             if results.count > 0 {
                 self?.currentPage += 1
@@ -114,7 +116,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == posts.count - 1 {
-            loadNextPage()
+            switch pageType {
+            case .home(.all), .node(_), .collection(_), .my(_):
+                loadNextPage()
+            default:
+                tableView.tableFooterView?.isHidden = true
+            }
         }
     }
 
