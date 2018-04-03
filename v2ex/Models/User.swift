@@ -71,15 +71,19 @@ struct User {
                     let doc = try HTML(html: html, encoding: .utf8)
                     // 页面右侧显示用户头像则证明登录成功
                     if let img = doc.xpath("//*[@id='Rightbar']/div[2]/div[1]/table[1]/tr/td[1]/a/img").first?["src"] {
-                        shared.username = username
-                        shared.avatar = "https:\(img)".replacingOccurrences(of: "normal", with: "large")
-                        shared.once = once
-                        shared.isLogin = true
+                        var user = User()
+                        user.username = username
+                        user.avatar = "https:\(img)".replacingOccurrences(of: "normal", with: "large")
+                        user.once = once
+                        user.isLogin = true
                         if let gold = doc.xpath("//a[@class='balance_area']/text()[1]").first?.content,
                             let silver = doc.xpath("//a[@class='balance_area']/text()[2]").first?.content,
                             let bronze = doc.xpath("//a[@class='balance_area']/text()[3]").first?.content {
-                                shared.balance = "🥇\(gold)🥈\(silver)🥉\(bronze)"
+                                user.balance = "🥇\(gold)🥈\(silver)🥉\(bronze)"
                         }
+
+                        user.saveUserInfo()
+                        shared = user
                     } else if let problem = doc.xpath("//div[@class='problem']/ul/li").first?.content {
                         error = problem
                     }
@@ -100,6 +104,29 @@ struct User {
         }
 
         User.shared = User()
+    }
+
+    private func saveUserInfo() {
+        let userInfo: [String: Any] = [
+            "username" : username ?? "",
+            "avatar": avatar ?? "",
+            "once": once ?? "",
+            "isLogin": isLogin,
+            "balance": balance ?? ""
+        ]
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValuesForKeys(userInfo)
+        userDefaults.synchronize()
+    }
+
+    mutating func getFromStorage(){
+        let userDefaults = UserDefaults.standard
+
+        self.username = userDefaults.string(forKey: "username")
+        self.avatar = userDefaults.string(forKey: "avatar")
+        self.once = userDefaults.string(forKey: "once")
+        self.isLogin = userDefaults.bool(forKey: "isLogin")
+        self.balance = userDefaults.string(forKey: "balance")
     }
 
 }

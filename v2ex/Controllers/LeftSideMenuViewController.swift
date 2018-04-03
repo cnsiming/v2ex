@@ -43,11 +43,13 @@ class LeftSideMenuViewController: UIViewController {
     }
 
     private func refresh() {
-        if User.shared.isLogin {
+        let user = User.shared
+        
+        if user.isLogin {
             loginButton.isHidden = true
-            username.text = User.shared.username
-            balance.text = User.shared.balance
-            if let urlString = User.shared.avatar, let url = URL(string: urlString) {
+            username.text = user.username
+            balance.text = user.balance
+            if let urlString = user.avatar, let url = URL(string: urlString) {
                 avatar.kf.setImage(with: url)
             }
         } else {
