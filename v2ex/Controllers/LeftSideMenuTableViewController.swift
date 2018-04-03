@@ -14,8 +14,8 @@ class LeftSideMenuTableViewController: UITableViewController {
         (.collection(.favoriteNodes), "节点收藏"),
         (.collection(.favoritePosts), "主题收藏"),
         (.collection(.following), "特别关注"),
-        (.my(.posts("/member/\(User.shared.username)/topics")), "我的发帖"),
-        (.my(.comments("/member/\(User.shared.username)/replies")), "我的回复")
+        (.my(.posts("/member/username/topics")), "我的发帖"),
+        (.my(.comments("/member/username/replies")), "我的回复")
     ]
 
     private func open(page: PageType, title: String) {
@@ -37,7 +37,6 @@ class LeftSideMenuTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return myPages.count
     }
 
@@ -49,8 +48,16 @@ class LeftSideMenuTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if User.shared.isLogin {
-            let page = myPages[indexPath.row]
+        if User.shared.isLogin, let username = User.shared.username {
+            var page = myPages[indexPath.row]
+            switch page.page {
+            case .my(.posts(let url)):
+                page.page = .my(.posts(url.replacingOccurrences(of: "username", with: username)))
+            case .my(.comments(let url)):
+                page.page = .my(.comments(url.replacingOccurrences(of: "username", with: username)))
+            default:
+                break
+            }
             open(page: page.page, title: page.title)
         } else {
             let alert = UIAlertController(title: "请先登录", message: nil, preferredStyle: .alert)

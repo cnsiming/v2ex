@@ -37,25 +37,58 @@ class Post {
         do {
             let doc = try HTML(html: html, encoding: .utf8)
 
-            // 如果获取不到标题，就跳过
-            if let title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content {
-                self.title = title
-            } else {
-                return nil
+            switch pageType {
+            case .home(_), .collection(_):
+                // 如果获取不到标题，就跳过
+                if let title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content {
+                    self.title = title
+                } else {
+                    return nil
+                }
+                if let url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"] {
+                    self.url = baseURL + String(url.split(separator: "#")[0])
+                }
+                self.avatar = "https:" + (doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"] ?? "")
+                self.nodeName = doc.xpath("//table/tr/td[3]/span[2]/a").first?.content
+                self.nodeURL = doc.xpath("//table/tr/td[3]/span[2]/a").first?["href"]
+                self.username = doc.xpath("//table/tr/td[3]/span[2]/strong[1]").first?.content
+                self.commentUser = doc.xpath("//table/tr/td[3]/span[2]/strong[2]").first?.content
+                self.commentCount = doc.xpath("//table/tr/td[4]/a").first?.content
+                self.commentTime = doc.xpath("//table/tr/td[3]/span[2]/text()[3]").first?.content?.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
+            case .node(_):
+                if let title = doc.xpath("//table/tr/td[3]/span[1]/a").first?.content {
+                    self.title = title
+                } else {
+                    return nil
+                }
+                if let url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"] {
+                    self.url = baseURL + String(url.split(separator: "#")[0])
+                }
+                self.avatar = "https:" + (doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"] ?? "")
+                self.nodeName = doc.xpath("//table/tr/td[3]/span[2]/a").first?.content
+                self.nodeURL = doc.xpath("//table/tr/td[3]/span[2]/a").first?["href"]
+                self.username = doc.xpath("//table/tr/td[3]/span[2]/strong[1]").first?.content
+                self.commentUser = doc.xpath("//table/tr/td[3]/span[2]/strong[2]").first?.content
+                self.commentCount = doc.xpath("//table/tr/td[4]/a").first?.content
+                self.commentTime = doc.xpath("//table/tr/td[3]/span[2]/text()").first?.content?.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
+            case .my(_):
+                if let title = doc.xpath("//table/tr/td[1]/span[1]/a").first?.content {
+                    self.title = title
+                } else {
+                    return nil
+                }
+                if let url = doc.xpath("//table/tr/td[1]/span[1]/a").first?["href"] {
+                    self.url = baseURL + String(url.split(separator: "#")[0])
+                }
+                self.avatar = User.shared.avatar
+                self.nodeName = doc.xpath("//table/tr/td[1]/span[2]/a").first?.content
+                self.nodeURL = doc.xpath("//table/tr/td[1]/span[2]/a").first?["href"]
+                self.username = doc.xpath("//table/tr/td[1]/span[2]/strong[1]/a").first?.content
+                self.commentUser = doc.xpath("//table/tr/td[1]/span[2]/strong[2]/a").first?.content
+                self.commentCount = doc.xpath("//table/tr/td[2]/a").first?.content
+                self.commentTime = doc.xpath("//table/tr/td[1]/span[2]/text()[3]").first?.content?.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
             }
-            if let url = doc.xpath("//table/tr/td[3]/span[1]/a").first?["href"] {
-                self.url = baseURL + String(url.split(separator: "#")[0])
-            }
-            self.avatar = "https:" + (doc.xpath("//table/tr/td[1]/a/img[@class='avatar']").first?["src"] ?? "")
-            self.nodeName = doc.xpath("//table/tr/td[3]/span[2]/a").first?.content
-            self.nodeURL = doc.xpath("//table/tr/td[3]/span[2]/a").first?["href"]
-            self.username = doc.xpath("//table/tr/td[3]/span[2]/strong[1]").first?.content
-            self.commentUser = doc.xpath("//table/tr/td[3]/span[2]/strong[2]").first?.content
-            self.commentCount = doc.xpath("//table/tr/td[4]/a").first?.content
 
-            if let timeString = doc.xpath(timeXPath).first?.content {
-                self.commentTime = timeString.split(separator: "•")[1].trimmingCharacters(in: .whitespaces)
-            }
         } catch let error as NSError {
             print(error.userInfo)
             return nil

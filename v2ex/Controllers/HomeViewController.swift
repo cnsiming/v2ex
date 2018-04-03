@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         guard let cell = cell as? PostCell else {
             return
         }
+
         let post = posts[indexPath.row]
         cell.avatarUrl = post.avatar
         cell.title.text = post.title
@@ -117,7 +118,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == posts.count - 1 {
             switch pageType {
-            case .home(.all), .node(_), .collection(.following), .my(_):
+            // BUG: 我的发帖、收藏主题不满一页时，会循环显示
+            case .home(.all), .node(_), .collection(_), .my(_):
                 loadNextPage()
             default:
                 tableView.tableFooterView?.isHidden = true
