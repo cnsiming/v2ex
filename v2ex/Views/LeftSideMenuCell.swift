@@ -10,7 +10,7 @@ import UIKit
 
 class LeftSideMenuCell: UITableViewCell {
 
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var name: UILabel!
 
 }

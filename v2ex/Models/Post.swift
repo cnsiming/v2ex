@@ -121,20 +121,19 @@ class Post {
 
         let userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
 
-        Alamofire.request(url, parameters: params, headers: ["User-Agent": userAgent]).responseString { response in
+        Alamofire.request(url, parameters: params, headers: ["User-Agent": userAgent]).validate().responseString { response in
             var posts = [Post]()
-            guard let html = response.result.value else {
-                return
-            }
-            do {
-                let doc = try HTML(html: html, encoding: .utf8)
-                for element in doc.xpath(xpath) {
-                    if let post = Post(forPage: pageType, html: element.toHTML!) {
-                        posts.append(post)
+            if let html = response.result.value {
+                do {
+                    let doc = try HTML(html: html, encoding: .utf8)
+                    for element in doc.xpath(xpath) {
+                        if let post = Post(forPage: pageType, html: element.toHTML!) {
+                            posts.append(post)
+                        }
                     }
+                } catch let error as NSError {
+                    print(error.userInfo)
                 }
-            } catch let error as NSError {
-                print(error.userInfo)
             }
             completion(posts)
         }

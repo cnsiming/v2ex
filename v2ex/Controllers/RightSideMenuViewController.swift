@@ -42,6 +42,7 @@ class RightSideMenuViewController: UITableViewController {
         {
             containerVC.toggleRightSideMenu()
             homeVC.pageType = .home(tab)
+            homeVC.title = "V2EX"
             homeVC.navigationItem.rightBarButtonItem?.title = title
         }
     }

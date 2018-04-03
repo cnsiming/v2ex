@@ -153,11 +153,20 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="rFu-T7-bmb" id="lWz-Q5-VzK"/>
                         <outlet property="tableView" destination="VMO-og-Dnk" id="x77-VE-BjU"/>
+                        <segue destination="f2Q-fg-Swm" kind="show" identifier="ShowCollectionNodes" id="cJO-U0-Lnh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1393" y="125"/>
+        </scene>
+        <!--CollectionNodes-->
+        <scene sceneID="u5t-XN-av6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CollectionNodes" id="f2Q-fg-Swm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gdw-AI-tFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425" y="-611"/>
         </scene>
         <!--话题详情-->
         <scene sceneID="QiU-UC-nke">
@@ -500,6 +509,6 @@
         <image name="avatar_73" width="73" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ld3-Zu-K6e"/>
+        <segue reference="qUG-pD-Ks6"/>
     </inferredMetricsTieBreakers>
 </document>

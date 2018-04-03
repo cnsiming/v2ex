@@ -27,6 +27,7 @@ class NodeListViewController: UIViewController {
             let node = nodes[indexPath.section].nodes![indexPath.row]
             homeVC.pageType = .node(node)
             homeVC.navigationItem.leftBarButtonItem = nil
+            homeVC.navigationItem.rightBarButtonItem = nil
             homeVC.navigationItem.title = node.name
         }
     }

@@ -21,8 +21,10 @@
 		949E48E22063DA320003EF97 /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949E48E12063DA320003EF97 /* LeftSideMenuViewController.swift */; };
 		949E48E42063FF500003EF97 /* LeftSideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949E48E32063FF500003EF97 /* LeftSideMenu.storyboard */; };
 		949E48E6206401DE0003EF97 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949E48E5206401DE0003EF97 /* Login.storyboard */; };
-		94A5C4EB2072786600F0FEBA /* LeftSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5C4EA2072786600F0FEBA /* LeftSideMenuTableViewController.swift */; };
 		94A5C4ED20727B1800F0FEBA /* LeftSideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5C4EC20727B1800F0FEBA /* LeftSideMenuCell.swift */; };
+		94A5C4EF20735D4200F0FEBA /* CollectionNodes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A5C4EE20735D4200F0FEBA /* CollectionNodes.storyboard */; };
+		94A5C4F120735DB700F0FEBA /* CollectionNodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5C4F020735DB700F0FEBA /* CollectionNodesViewController.swift */; };
+		94A5C4F320735EFD00F0FEBA /* CollectionNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5C4F220735EFD00F0FEBA /* CollectionNodeCell.swift */; };
 		94BC4A6A206A934600A77314 /* PageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BC4A69206A934600A77314 /* PageType.swift */; };
 		94C7818B206E362900952D6C /* RightSideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C7818A206E362900952D6C /* RightSideMenu.storyboard */; };
 		94C7818D206E36EC00952D6C /* RightSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C7818C206E36EC00952D6C /* RightSideMenuViewController.swift */; };
@@ -58,8 +60,10 @@
 		949E48E12063DA320003EF97 /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
 		949E48E32063FF500003EF97 /* LeftSideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeftSideMenu.storyboard; sourceTree = "<group>"; };
 		949E48E5206401DE0003EF97 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		94A5C4EA2072786600F0FEBA /* LeftSideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuTableViewController.swift; sourceTree = "<group>"; };
 		94A5C4EC20727B1800F0FEBA /* LeftSideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuCell.swift; sourceTree = "<group>"; };
+		94A5C4EE20735D4200F0FEBA /* CollectionNodes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionNodes.storyboard; sourceTree = "<group>"; };
+		94A5C4F020735DB700F0FEBA /* CollectionNodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNodesViewController.swift; sourceTree = "<group>"; };
+		94A5C4F220735EFD00F0FEBA /* CollectionNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNodeCell.swift; sourceTree = "<group>"; };
 		94BC4A69206A934600A77314 /* PageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageType.swift; sourceTree = "<group>"; };
 		94C7818A206E362900952D6C /* RightSideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightSideMenu.storyboard; sourceTree = "<group>"; };
 		94C7818C206E36EC00952D6C /* RightSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 				947E003F205B729B0093E083 /* NodeListViewController.swift */,
 				943AC00A20623A530083697B /* LoginViewController.swift */,
 				949E48E12063DA320003EF97 /* LeftSideMenuViewController.swift */,
-				94A5C4EA2072786600F0FEBA /* LeftSideMenuTableViewController.swift */,
+				94A5C4F020735DB700F0FEBA /* CollectionNodesViewController.swift */,
 				94C7818C206E36EC00952D6C /* RightSideMenuViewController.swift */,
 			);
 			path = Controllers;
@@ -152,9 +156,11 @@
 				94EB123D205385C900722B99 /* NodeCell.swift */,
 				94A5C4EC20727B1800F0FEBA /* LeftSideMenuCell.swift */,
 				94DD467C2056750E000E0F13 /* NodeListHeaderView.swift */,
+				94A5C4F220735EFD00F0FEBA /* CollectionNodeCell.swift */,
 				94CC3C01204949A700C6F490 /* Main.storyboard */,
 				949E48E5206401DE0003EF97 /* Login.storyboard */,
 				949E48E32063FF500003EF97 /* LeftSideMenu.storyboard */,
+				94A5C4EE20735D4200F0FEBA /* CollectionNodes.storyboard */,
 				94C7818A206E362900952D6C /* RightSideMenu.storyboard */,
 				94CC3C06204949A700C6F490 /* LaunchScreen.storyboard */,
 			);
@@ -269,6 +275,7 @@
 				949E48E6206401DE0003EF97 /* Login.storyboard in Resources */,
 				94CC3C05204949A700C6F490 /* Assets.xcassets in Resources */,
 				94CC3C03204949A700C6F490 /* Main.storyboard in Resources */,
+				94A5C4EF20735D4200F0FEBA /* CollectionNodes.storyboard in Resources */,
 				94EB123C2053801E00722B99 /* nodes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A5C4F320735EFD00F0FEBA /* CollectionNodeCell.swift in Sources */,
+				94A5C4F120735DB700F0FEBA /* CollectionNodesViewController.swift in Sources */,
 				94293F21204E6A4F0015BF16 /* PostCell.swift in Sources */,
 				94CC3C00204949A700C6F490 /* HomeViewController.swift in Sources */,
 				94CC3BFE204949A700C6F490 /* AppDelegate.swift in Sources */,
@@ -347,7 +356,6 @@
 				94EB123E205385C900722B99 /* NodeCell.swift in Sources */,
 				94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */,
 				94A5C4ED20727B1800F0FEBA /* LeftSideMenuCell.swift in Sources */,
-				94A5C4EB2072786600F0FEBA /* LeftSideMenuTableViewController.swift in Sources */,
 				94CC3C1220495A0500C6F490 /* Post.swift in Sources */,
 				947E0040205B729B0093E083 /* NodeListViewController.swift in Sources */,
 				949E48E02063BF2A0003EF97 /* ContainerViewController.swift in Sources */,
