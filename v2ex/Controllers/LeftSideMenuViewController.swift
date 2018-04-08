@@ -44,7 +44,7 @@ class LeftSideMenuViewController: UIViewController {
 
     private func refresh() {
         let user = User.shared
-        
+
         if user.isLogin {
             loginButton.isHidden = true
             username.text = user.username
@@ -71,7 +71,7 @@ class LeftSideMenuViewController: UIViewController {
             case .collection(.favoriteNodes):
                 homeVC.performSegue(withIdentifier: "ShowCollectionNodes", sender: nil)
             case .my(.comments(_)):
-                break
+                homeVC.performSegue(withIdentifier: "ShowMyComments", sender: nil)
             default:
                 homeVC.pageType = page
                 homeVC.navigationItem.title = title

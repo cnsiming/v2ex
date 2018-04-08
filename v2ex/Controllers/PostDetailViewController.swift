@@ -37,9 +37,9 @@ class PostDetailViewController: UIViewController {
         if indexPath.row == 0 {
             let cell = cell as! PostDetailCell
             cell.avatarUrl = postDetail?.avatar
-            cell.title.text = post?.title
+            cell.title.text = postDetail?.title ?? post?.title
             cell.footer.text = postDetail?.footer
-            if let node = post?.nodeName {
+            if let node = postDetail?.node {
                 cell.node.text = "🏷 " + node
             }
             cell.content.text = postDetail?.content

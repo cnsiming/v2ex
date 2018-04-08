@@ -24,6 +24,18 @@ class Post {
     var commentUser: String?
     var commentCount: String?
 
+    init() {
+        self.url = nil
+        self.avatar = nil
+        self.title = nil
+        self.nodeName = nil
+        self.nodeURL = nil
+        self.username = nil
+        self.commentTime = nil
+        self.commentUser = nil
+        self.commentCount = nil
+    }
+
     init?(forPage pageType: PageType, html: String) {
         var timeXPath: String
 

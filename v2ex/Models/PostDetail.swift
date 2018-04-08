@@ -10,6 +10,8 @@ import Alamofire
 import Kanna
 
 class PostDetail {
+    var title: String?
+    var node: String?
     var avatar: String?
     var footer: String?
     var content: String?
@@ -19,6 +21,8 @@ class PostDetail {
     init(by html: String) {
         do {
             let doc = try HTML(html: html, encoding: .utf8)
+            self.title = doc.xpath("//h1").first?.content
+            self.node = doc.xpath("//div[@class='header']/a[2]").first?.content
             self.avatar = "https:" + (doc.xpath("//*[@id='Main']/div[2]/div[1]/div[1]/a/img").first?["src"] ?? "")
             self.footer = doc.xpath("//*[@id='Main']/div[2]/div[1]/small").first?.content
             self.content = doc.xpath("//*[@class='topic_content']").first?.content

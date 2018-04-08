@@ -48,8 +48,9 @@ class HomeViewController: UIViewController {
     }
 
     @objc private func refresh() {
+        currentPage = 1
+        
         Post.getPostList(from: pageType) { [weak self] results in
-            self?.currentPage = 1
             self?.posts = results
             self?.tableView.reloadData()
             self?.tableView.refreshControl!.endRefreshing()

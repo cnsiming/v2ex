@@ -154,6 +154,7 @@
                         <outlet property="loadingIndicator" destination="rFu-T7-bmb" id="lWz-Q5-VzK"/>
                         <outlet property="tableView" destination="VMO-og-Dnk" id="x77-VE-BjU"/>
                         <segue destination="f2Q-fg-Swm" kind="show" identifier="ShowCollectionNodes" id="cJO-U0-Lnh"/>
+                        <segue destination="xbR-6C-w7T" kind="show" identifier="ShowMyComments" id="3xW-TI-28Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -166,12 +167,20 @@
                 <viewControllerPlaceholder storyboardName="CollectionNodes" id="f2Q-fg-Swm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gdw-AI-tFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="-611"/>
+            <point key="canvasLocation" x="2298" y="-321"/>
+        </scene>
+        <!--MyComments-->
+        <scene sceneID="sQL-Ak-WpT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyComments" id="xbR-6C-w7T" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8S-a1-dTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2289" y="-248"/>
         </scene>
         <!--话题详情-->
         <scene sceneID="QiU-UC-nke">
             <objects>
-                <viewController title="话题详情" id="tFS-js-RTT" customClass="PostDetailViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetail" title="话题详情" id="tFS-js-RTT" customClass="PostDetailViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PtD-4g-yuB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -320,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCc-MS-Bzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="125"/>
+            <point key="canvasLocation" x="2492" y="145"/>
         </scene>
         <!--热门节点-->
         <scene sceneID="yiV-K3-dLB">
