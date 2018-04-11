@@ -54,6 +54,19 @@ class PostDetailViewController: UIViewController {
         }
     }
 
+    private func loadNextPage() {
+        PostDetail.getPostDetail(url: post!.url!, page: currentPage + 1) { [weak self] results in
+            guard let comments = results?.comments, comments.count > 0 else {
+                return
+            }
+
+            self?.currentPage += 1
+            self?.postDetail?.comments.append(contentsOf: comments)
+            self?.postDetail?.commentCount = results!.commentCount
+            self?.tableView.reloadData()
+        }
+    }
+
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -80,14 +93,8 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == postDetail?.comments.count, currentPage < postDetail!.commentCount / 100 + 1 {
-            PostDetail.getPostDetail(url: post!.url!, page: currentPage + 1) { [weak self] results in
-                if let comments = results?.comments {
-                    self?.postDetail?.comments.append(contentsOf: comments)
-                    self?.currentPage += 1
-                    self?.postDetail?.commentCount = results!.commentCount
-                    self?.tableView.reloadData()
-                }
-            }
+            loadNextPage()
         }
     }
+
 }

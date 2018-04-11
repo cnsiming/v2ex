@@ -39,11 +39,14 @@ class MyCommentsViewController: UIViewController {
     }
 
     private func loadNextPage() {
-        currentPage += 1
+        MyComment.getCommentList(page: currentPage + 1) { [weak self] comments in
+            guard comments.count > 0 else {
+                return
+            }
 
-        MyComment.getCommentList(page: currentPage) { [weak self] comments in
             self?.comments.append(contentsOf: comments)
             self?.tableView.reloadData()
+            self?.currentPage += 1
         }
     }
 
@@ -51,12 +54,14 @@ class MyCommentsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowPostDetail" {
-            let postDetailVC = segue.destination as! PostDetailViewController
-            if let indexPath = tableView.indexPath(for: sender as! MyCommentCell), let url = comments[indexPath.row].url {
-                let post = Post()
-                post.url = baseURL + url
-                postDetailVC.post = post
+            guard let indexPath = tableView.indexPath(for: sender as! MyCommentCell), let url = comments[indexPath.row].url else {
+                return
             }
+
+            let postDetailVC = segue.destination as! PostDetailViewController
+            let post = Post()
+            post.url = baseURL + url
+            postDetailVC.post = post
         }
     }
 

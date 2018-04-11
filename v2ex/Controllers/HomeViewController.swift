@@ -61,13 +61,14 @@ class HomeViewController: UIViewController {
         tableView.tableFooterView?.isHidden = false
         loadingIndicator.startAnimating()
 
-        Post.getPostList(from: pageType, pageNum: currentPage) { [weak self] results in
+        Post.getPostList(from: pageType, pageNum: currentPage + 1) { [weak self] results in
             if results.count > 0 {
                 self?.currentPage += 1
                 self?.posts.append(contentsOf: results)
                 self?.tableView.reloadData()
-                self?.loadingIndicator.stopAnimating()
             }
+            self?.tableView.tableFooterView?.isHidden = true
+            self?.loadingIndicator.stopAnimating()
         }
     }
 
