@@ -37,17 +37,14 @@ class Post {
     }
 
     init?(forPage pageType: PageType, html: String) {
-        var timeXPath: String
-
-        switch pageType {
-        case .node(_):
-            timeXPath = "//table/tr/td[3]/span[2]/text()"
-        default:
-            timeXPath = "//table/tr/td[3]/span[2]/text()[3]"
-        }
-
         do {
             let doc = try HTML(html: html, encoding: .utf8)
+
+            // 如果检测到首页状态未登录，清除登录状态
+            if User.shared.isLogin, let button = doc.xpath("//*[@id='Top']/div/div/table/tr/td[3]/a[3]").first?["href"], button == "/signin" {
+                User.shared = User()
+                User.shared.saveUserInfo()
+            }
 
             switch pageType {
             case .home(_), .collection(_):

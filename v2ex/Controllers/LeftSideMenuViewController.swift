@@ -23,6 +23,7 @@ class LeftSideMenuViewController: UIViewController {
         (.my(.posts("/member/username/topics")), "我的发帖"),
         (.my(.comments("/member/username/replies")), "我的回复")
     ]
+    private let others = ["退出登录"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,19 +84,45 @@ class LeftSideMenuViewController: UIViewController {
 
 extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myPages.count
+        if section == 0 {
+            return myPages.count
+        } else {
+            return others.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeftSideMenuCell", for: indexPath) as! LeftSideMenuCell
-        cell.name.text = myPages[indexPath.row].title
+        if indexPath.section == 0 {
+            cell.name.text = myPages[indexPath.row].title
+        } else if indexPath.section == 1 {
+            cell.name.text = others[indexPath.row]
+        }
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if User.shared.isLogin, let username = User.shared.username {
+        if !User.shared.isLogin {
+            let alert = UIAlertController(title: "请先登录", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                User.logout()
+                refresh()
+            }
+        } else if let username = User.shared.username {
             var page = myPages[indexPath.row]
 
             switch page.page {
@@ -108,11 +135,6 @@ extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource
             }
 
             open(page: page.page, title: page.title)
-        } else {
-            let alert = UIAlertController(title: "请先登录", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-
-            present(alert, animated: true, completion: nil)
         }
 
         tableView.deselectRow(at: indexPath, animated: true)

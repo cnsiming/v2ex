@@ -23,7 +23,7 @@ struct User {
 
     var username: String? = nil
     var avatar: String? = nil
-    var once: String? = nil
+    var once: String? = nil    // once只能使用一次，使用后需要重新获取
     var isLogin: Bool = false
     var balance : String? = nil
 
@@ -54,8 +54,8 @@ struct User {
             loginParams["username"]!: username,
             loginParams["password"]!: password,
             loginParams["captcha"]!: captcha,
-            "once": once,
-            "next": "/"
+            loginParams["once"]!: once,
+            loginParams["next"]!: "/"
         ]
         let headers = [
             "Host": "www.v2ex.com",
@@ -71,19 +71,16 @@ struct User {
                     let doc = try HTML(html: html, encoding: .utf8)
                     // 页面右侧显示用户头像则证明登录成功
                     if let img = doc.xpath("//*[@id='Rightbar']/div[2]/div[1]/table[1]/tr/td[1]/a/img").first?["src"] {
-                        var user = User()
-                        user.username = username
-                        user.avatar = "https:\(img)".replacingOccurrences(of: "normal", with: "large")
-                        user.once = once
-                        user.isLogin = true
+                        shared.isLogin = true
+                        shared.username = username
+                        shared.avatar = "https:\(img)".replacingOccurrences(of: "normal", with: "large")
                         if let gold = doc.xpath("//a[@class='balance_area']/text()[1]").first?.content,
                             let silver = doc.xpath("//a[@class='balance_area']/text()[2]").first?.content,
                             let bronze = doc.xpath("//a[@class='balance_area']/text()[3]").first?.content {
-                                user.balance = "🥇\(gold)🥈\(silver)🥉\(bronze)"
+                                shared.balance = "🥇\(gold)🥈\(silver)🥉\(bronze)"
                         }
 
-                        user.saveUserInfo()
-                        shared = user
+                        shared.saveUserInfo()
                     } else if let problem = doc.xpath("//div[@class='problem']/ul/li").first?.content {
                         error = problem
                     }
@@ -103,10 +100,11 @@ struct User {
             }
         }
 
-        User.shared = User()
+        shared = User()
+        shared.saveUserInfo()
     }
 
-    private func saveUserInfo() {
+    func saveUserInfo() {
         let userInfo: [String: Any] = [
             "username" : username ?? "",
             "avatar": avatar ?? "",
