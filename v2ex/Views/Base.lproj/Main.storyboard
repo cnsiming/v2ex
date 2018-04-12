@@ -419,22 +419,6 @@
             </objects>
             <point key="canvasLocation" x="548" y="1047.5262368815593"/>
         </scene>
-        <!--通知-->
-        <scene sceneID="QYk-VV-alY">
-            <objects>
-                <viewController id="Ipl-xd-9ko" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IC6-DJ-n88">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="XMc-A7-EcS"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="通知" id="b27-fj-mRD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="waZ-s6-goo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="548" y="1994"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qyr-WD-ZYx">
             <objects>
@@ -452,7 +436,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9K-hM-v6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1374" y="1187"/>
+            <point key="canvasLocation" x="-1748" y="1463"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cfG-vD-WVa">
@@ -505,12 +489,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ipl-xd-9ko" kind="relationship" relationship="rootViewController" id="9XR-Eu-rnJ"/>
+                        <segue destination="qP2-7C-VLT" kind="relationship" relationship="rootViewController" id="5kA-UB-Yj5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3n-5E-088" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="1994"/>
+            <point key="canvasLocation" x="-314" y="2015"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="Dgb-sh-DCu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notifications" id="qP2-7C-VLT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LNd-AX-bwv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lC4-4W-H1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="336" y="2014"/>
         </scene>
     </scenes>
     <resources>

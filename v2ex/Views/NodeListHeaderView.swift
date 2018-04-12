@@ -9,6 +9,7 @@
 import UIKit
 
 class NodeListHeaderView: UICollectionReusableView {
+
     @IBOutlet weak var nodeType: UILabel!
 
 }

@@ -31,6 +31,7 @@ struct MyComment {
             self.comment = commentDoc.xpath("//div").first?.content
         } catch let error as NSError {
             print(error.userInfo)
+            return nil
         }
     }
 
