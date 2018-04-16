@@ -14,11 +14,10 @@ class NotificationsViewController: UIViewController {
     private var notifications = [Notification]()
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "系统提醒"
 
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl!.attributedTitle = NSAttributedString(string: "下拉刷新...")
@@ -27,7 +26,17 @@ class NotificationsViewController: UIViewController {
         refresh()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.isHidden = !User.shared.isLogin
+        loginButton.isHidden = User.shared.isLogin
+        refresh()
+    }
+
     @objc private func refresh() {
+        guard User.shared.isLogin else {
+            return
+        }
+
         currentPage = 1
 
         Notification.getNotificationList { [weak self] notifications in
@@ -43,6 +52,19 @@ class NotificationsViewController: UIViewController {
                 self?.currentPage += 1
                 self?.notifications.append(contentsOf: notifications)
                 self?.tableView.reloadData()
+            }
+        }
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPostDetail" {
+            let postDetailVC = segue.destination as! PostDetailViewController
+            if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                let post = Post()
+                post.url = notifications[indexPath.row].url
+                post.title = notifications[indexPath.row].title
+                postDetailVC.post = post
             }
         }
     }

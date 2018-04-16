@@ -87,7 +87,7 @@
         <!--PostDetail-->
         <scene sceneID="p5p-5O-Ulz">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="PostDetail" id="nEK-kv-wrR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PostDetail" id="nEK-kv-wrR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upr-8Q-O75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="449" y="163"/>

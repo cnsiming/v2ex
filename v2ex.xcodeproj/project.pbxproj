@@ -12,10 +12,11 @@
 		9425733A207F606100DF72C5 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94257339207F606100DF72C5 /* NotificationsViewController.swift */; };
 		9425733C207F610900DF72C5 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9425733B207F610900DF72C5 /* Notifications.storyboard */; };
 		9425733E207F78A500DF72C5 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9425733D207F78A500DF72C5 /* NotificationCell.swift */; };
-		94293F1C204D31240015BF16 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F1D204D31240015BF16 /* Kanna.framework */; };
-		94293F1E204D6D0D0015BF16 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F1F204D6D0D0015BF16 /* Alamofire.framework */; };
+		94257340208055BC00DF72C5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9425733F208055BC00DF72C5 /* Alamofire.framework */; };
+		94257342208055F400DF72C5 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94257341208055F400DF72C5 /* Kanna.framework */; };
+		94257344208055FC00DF72C5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94257343208055FC00DF72C5 /* Kingfisher.framework */; };
+		942573462084913000DF72C5 /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942573452084913000DF72C5 /* PostDetail.storyboard */; };
 		94293F21204E6A4F0015BF16 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F20204E6A4F0015BF16 /* PostCell.swift */; };
-		94293F22204E969E0015BF16 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94293F23204E969E0015BF16 /* Kingfisher.framework */; };
 		94293F27204FE07F0015BF16 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F26204FE07F0015BF16 /* PostDetail.swift */; };
 		94293F29204FE24D0015BF16 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F28204FE24D0015BF16 /* PostDetailViewController.swift */; };
 		94293F2B204FEA9C0015BF16 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */; };
@@ -59,10 +60,11 @@
 		94257339207F606100DF72C5 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		9425733B207F610900DF72C5 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
 		9425733D207F78A500DF72C5 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
-		94293F1D204D31240015BF16 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94293F1F204D6D0D0015BF16 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9425733F208055BC00DF72C5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94257341208055F400DF72C5 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94257343208055FC00DF72C5 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		942573452084913000DF72C5 /* PostDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
 		94293F20204E6A4F0015BF16 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		94293F23204E969E0015BF16 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94293F26204FE07F0015BF16 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		94293F28204FE24D0015BF16 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		94293F2A204FEA9C0015BF16 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
@@ -105,9 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94293F22204E969E0015BF16 /* Kingfisher.framework in Frameworks */,
-				94293F1E204D6D0D0015BF16 /* Alamofire.framework in Frameworks */,
-				94293F1C204D31240015BF16 /* Kanna.framework in Frameworks */,
+				94257344208055FC00DF72C5 /* Kingfisher.framework in Frameworks */,
+				94257342208055F400DF72C5 /* Kanna.framework in Frameworks */,
+				94257340208055BC00DF72C5 /* Alamofire.framework in Frameworks */,
 				0007E6226E896B0C1A3A53EE /* Pods_v2ex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +182,7 @@
 				94A5C4FA2074E7BC00F0FEBA /* MyCommentCell.swift */,
 				9425733D207F78A500DF72C5 /* NotificationCell.swift */,
 				94CC3C01204949A700C6F490 /* Main.storyboard */,
+				942573452084913000DF72C5 /* PostDetail.storyboard */,
 				949E48E5206401DE0003EF97 /* Login.storyboard */,
 				949E48E32063FF500003EF97 /* LeftSideMenu.storyboard */,
 				94A5C4EE20735D4200F0FEBA /* CollectionNodes.storyboard */,
@@ -223,9 +226,9 @@
 		99AEE0E368143DBB131A1361 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94293F23204E969E0015BF16 /* Kingfisher.framework */,
-				94293F1F204D6D0D0015BF16 /* Alamofire.framework */,
-				94293F1D204D31240015BF16 /* Kanna.framework */,
+				94257343208055FC00DF72C5 /* Kingfisher.framework */,
+				94257341208055F400DF72C5 /* Kanna.framework */,
+				9425733F208055BC00DF72C5 /* Alamofire.framework */,
 				58AEC3BF2340D03C4809B7D7 /* Pods_v2ex.framework */,
 			);
 			name = Frameworks;
@@ -261,7 +264,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = com.wujiangbin.v2ex;
 				TargetAttributes = {
 					94CC3BF9204949A700C6F490 = {
@@ -293,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942573462084913000DF72C5 /* PostDetail.storyboard in Resources */,
 				94CC3C08204949A700C6F490 /* LaunchScreen.storyboard in Resources */,
 				9425733C207F610900DF72C5 /* Notifications.storyboard in Resources */,
 				94C7818B206E362900952D6C /* RightSideMenu.storyboard in Resources */,
@@ -438,6 +442,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -445,6 +450,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -472,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -495,6 +501,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -502,6 +509,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -523,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -539,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8EZE77275G;
 				INFOPLIST_FILE = "$(SRCROOT)/v2ex/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wujiangbin.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,6 +564,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8EZE77275G;
 				INFOPLIST_FILE = "$(SRCROOT)/v2ex/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wujiangbin.v2ex;
 				PRODUCT_NAME = "$(TARGET_NAME)";

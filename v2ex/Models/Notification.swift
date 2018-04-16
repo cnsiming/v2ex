@@ -15,6 +15,7 @@ struct Notification {
     var avatar: String?
     var time: String?
     var title: String?
+    var url: String?
     var comment: String?
 
     init?(html: String) {
@@ -27,6 +28,9 @@ struct Notification {
             self.username = doc.xpath("//table/tr/td[2]/span[1]/a[1]/strong").first?.content
             self.time = doc.xpath("//table/tr/td[2]/span[2]").first?.content
             self.title = doc.xpath("//table/tr/td[2]/span[1]").first?.content
+            if let url = doc.xpath("//table/tr/td[2]/span[1]/a[2]").first?["href"] {
+                self.url = baseURL + url
+            }
             self.comment = doc.xpath("//div[@class='payload']").first?.content
         } catch let error as NSError {
             print(error.userInfo)
