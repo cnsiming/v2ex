@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarVC = mainSB.instantiateInitialViewController() as! UITabBarController
+        let TabBarSB = UIStoryboard(name: "TabBar", bundle: nil)
+        let tabBarVC = TabBarSB.instantiateInitialViewController() as! UITabBarController
         let leftSideMenuVC = LeftSideMenuViewController.storyboardInstance()
         let rightSideMenuVC = RightSideMenuViewController.storyboardInstance()
 

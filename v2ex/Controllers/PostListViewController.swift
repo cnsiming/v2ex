@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  PostListViewController.swift
 //  v2ex
 //
 //  Created by wjb on 2018/3/2.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController {
+class PostListViewController: UIViewController {
 
     var posts = [Post]()
     var pageType: PageType = .home(.all) {
@@ -104,7 +104,7 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension PostListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count

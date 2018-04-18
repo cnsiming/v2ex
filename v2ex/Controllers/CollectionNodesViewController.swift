@@ -26,7 +26,7 @@ class CollectionNodesViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowNodeDetail" {
-            let homeVC = segue.destination as! HomeViewController
+            let homeVC = segue.destination as! PostListViewController
             let indexPath = collectionView.indexPath(for: sender as! CollectionNodeCell)!
             let node = nodes[indexPath.row]
 

@@ -65,7 +65,7 @@ class LeftSideMenuViewController: UIViewController {
     private func open(page: PageType, title: String) {
         if let containerVC = self.parent as? ContainerViewController,
             let navVC = containerVC.tabBarVC.viewControllers?.first as? UINavigationController,
-            let homeVC = navVC.viewControllers.first as? HomeViewController
+            let homeVC = navVC.viewControllers.first as? PostListViewController
         {
             containerVC.toggleRightSideMenu()
             switch page {

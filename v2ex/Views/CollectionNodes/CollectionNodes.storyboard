@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="-70" y="9"/>
         </scene>
-        <!--HomeViewController-->
+        <!--PostList-->
         <scene sceneID="Cor-YK-nZC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="HomeViewController" id="rgS-Ox-BaX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PostList" id="rgS-Ox-BaX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBu-Xp-Ygf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="564" y="8"/>

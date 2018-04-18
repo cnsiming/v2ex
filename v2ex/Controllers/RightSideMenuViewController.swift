@@ -38,11 +38,11 @@ class RightSideMenuViewController: UITableViewController {
     private func open(tab: PageType.Tab, title: String) {
         if let containerVC = self.parent as? ContainerViewController,
             let navVC = containerVC.tabBarVC.viewControllers?.first as? UINavigationController,
-            let homeVC = navVC.viewControllers.first as? HomeViewController
+            let homeVC = navVC.viewControllers.first as? PostListViewController
         {
             containerVC.toggleRightSideMenu()
             homeVC.pageType = .home(tab)
-            homeVC.title = "V2EX"
+            homeVC.navigationItem.title = "V2EX"
             homeVC.navigationItem.rightBarButtonItem?.title = title
         }
     }
