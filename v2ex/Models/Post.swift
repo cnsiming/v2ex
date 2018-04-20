@@ -135,6 +135,10 @@ class Post {
             if let html = response.result.value {
                 do {
                     let doc = try HTML(html: html, encoding: .utf8)
+                    // 首页检测到有'/mission/daily'链接，则可以签到
+                    if User.shared.isLogin, let _ = doc.xpath("//a[@href='/mission/daily']").first {
+                        User.dailyMission()
+                    }
                     for element in doc.xpath(xpath) {
                         if let post = Post(forPage: pageType, html: element.toHTML!) {
                             posts.append(post)
@@ -147,4 +151,5 @@ class Post {
             completion(posts)
         }
     }
+
 }

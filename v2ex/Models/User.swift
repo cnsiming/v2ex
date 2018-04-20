@@ -127,4 +127,37 @@ struct User {
         self.balance = userDefaults.string(forKey: "balance")
     }
 
+    static func dailyMission() {
+        guard shared.isLogin else {
+            return
+        }
+
+        let url = baseURL + "/mission/daily"
+        let headers = [
+            "Host": "www.v2ex.com",
+            "Origin": "http://www.v2ex.com",
+            "Referer": "http://www.v2ex.com/mission/daily",
+            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+        ]
+
+        Alamofire.request(url, headers: headers).validate().responseString { response in
+            guard let html = response.result.value else {
+                return
+            }
+
+            do {
+                let doc = try HTML(html: html, encoding: .utf8)
+                guard let dailyUrl = doc.xpath("//input[@value='领取 X 铜币']").first?["onclick"]?.split(separator: "'")[1] else {
+                    return
+                }
+                Alamofire.request(baseURL + dailyUrl, headers: headers).validate().responseString { response in
+                    if let html = response.result.value, html.contains("已成功领取") {
+                        NotificationCenter.default.post(name: Notification.Name.V2ex.dailyMission, object: nil)
+                    }
+                }
+            } catch let error as NSError {
+                print(error.userInfo)
+            }
+        }
+    }
 }

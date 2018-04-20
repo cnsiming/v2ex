@@ -44,6 +44,8 @@ class PostListViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80
 
+        NotificationCenter.default.addObserver(self, selector: #selector(dailyMission), name: Notification.Name.V2ex.dailyMission, object: nil)
+
         refresh()
     }
 
@@ -90,6 +92,11 @@ class PostListViewController: UIViewController {
         if let comments = post.commentCount {
             cell.comments.text = "✉️ " + comments
         }
+    }
+
+    @objc private func dailyMission() {
+        let hudView = HUDView.hud(inView: view, animated: true)
+        hudView.text = "已签到"
     }
 
     // MARK: - Navigation

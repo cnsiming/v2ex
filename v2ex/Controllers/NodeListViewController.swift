@@ -67,7 +67,7 @@ extension NodeListViewController: UICollectionViewDelegateFlowLayout {
     // 根据label.text的内容设置UICollectionViewCell的宽度
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let nodeName = nodes[indexPath.section].nodes?[indexPath.row].name as NSString? {
-            let size = nodeName.size(withAttributes: [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 15)!])
+            let size = nodeName.size(withAttributes: [NSAttributedStringKey.font: UIFont(name: "PingFang SC", size: 15)!])
             return CGSize(width: size.width + 16, height: size.height + 16)
         }
         return CGSize.zero

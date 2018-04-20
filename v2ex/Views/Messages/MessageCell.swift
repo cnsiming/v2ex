@@ -1,5 +1,5 @@
 //
-//  NotificationCell.swift
+//  MessageCell.swift
 //  v2ex
 //
 //  Created by wjb on 2018/4/12.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class NotificationCell: UITableViewCell {
+class MessageCell: UITableViewCell {
 
     var avatarUrl: String? {
         didSet {

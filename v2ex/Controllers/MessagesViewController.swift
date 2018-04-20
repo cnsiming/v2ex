@@ -1,5 +1,5 @@
 //
-//  NotificationsViewController.swift
+//  MessagesViewController.swift
 //  v2ex
 //
 //  Created by wjb on 2018/4/12.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController {
+class MessagesViewController: UIViewController {
 
     private var currentPage = 1
-    private var notifications = [Notification]()
+    private var messages = [Message]()
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loginButton: UIButton!
@@ -39,18 +39,18 @@ class NotificationsViewController: UIViewController {
 
         currentPage = 1
 
-        Notification.getNotificationList { [weak self] notifications in
-            self?.notifications = notifications
+        Message.getMessageList { [weak self] notifications in
+            self?.messages = notifications
             self?.tableView.reloadData()
             self?.tableView.refreshControl?.endRefreshing()
         }
     }
 
     private func loadNextPage() {
-        Notification.getNotificationList(page: currentPage + 1) { [weak self] notifications in
+        Message.getMessageList(page: currentPage + 1) { [weak self] notifications in
             if notifications.count > 0 {
                 self?.currentPage += 1
-                self?.notifications.append(contentsOf: notifications)
+                self?.messages.append(contentsOf: notifications)
                 self?.tableView.reloadData()
             }
         }
@@ -62,8 +62,8 @@ class NotificationsViewController: UIViewController {
             let postDetailVC = segue.destination as! PostDetailViewController
             if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
                 let post = Post()
-                post.url = notifications[indexPath.row].url
-                post.title = notifications[indexPath.row].title
+                post.url = messages[indexPath.row].url
+                post.title = messages[indexPath.row].title
                 postDetailVC.post = post
             }
         }
@@ -71,26 +71,26 @@ class NotificationsViewController: UIViewController {
 
 }
 
-extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
+extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notifications.count
+        return messages.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCell", for: indexPath) as! NotificationCell
-        let notification = notifications[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCell
+        let message = messages[indexPath.row]
 
-        cell.avatarUrl = notification.avatar
-        cell.time.text = notification.time
-        cell.title.text = notification.title
-        cell.comment.text = notification.comment
+        cell.avatarUrl = message.avatar
+        cell.time.text = message.time
+        cell.title.text = message.title
+        cell.comment.text = message.comment
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == notifications.count - 1 {
+        if indexPath.row == messages.count - 1 {
             loadNextPage()
         }
     }

@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="-314" y="2365"/>
         </scene>
-        <!--Notifications-->
+        <!--Messages-->
         <scene sceneID="Dgb-sh-DCu">
             <objects>
-                <viewControllerPlaceholder storyboardName="Notifications" id="qP2-7C-VLT" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Messages" id="qP2-7C-VLT" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LNd-AX-bwv"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lC4-4W-H1S" userLabel="First Responder" sceneMemberID="firstResponder"/>

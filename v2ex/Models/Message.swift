@@ -9,7 +9,7 @@
 import Alamofire
 import Kanna
 
-struct Notification {
+struct Message {
 
     var username: String?
     var avatar: String?
@@ -38,8 +38,8 @@ struct Notification {
         }
     }
 
-    static func getNotificationList(page: Int = 1, completion: @escaping ([Notification]) -> Void) {
-        var notifications = [Notification]()
+    static func getMessageList(page: Int = 1, completion: @escaping ([Message]) -> Void) {
+        var notifications = [Message]()
         let url = baseURL + "/notifications"
         let params = ["p": page]
         let headers = ["User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"]
@@ -53,7 +53,7 @@ struct Notification {
             do {
                 let doc = try HTML(html: html, encoding: .utf8)
                 for element in doc.xpath("//div[@id='Main']/div[@class='box']/div[@class='cell']") {
-                    if let notification = Notification(html: element.toHTML!) {
+                    if let notification = Message(html: element.toHTML!) {
                         notifications.append(notification)
                     }
                 }
