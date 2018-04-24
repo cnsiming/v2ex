@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--话题详情-->
+        <!--PostDetail-->
         <scene sceneID="NTL-AL-EcY">
             <objects>
-                <viewController title="话题详情" id="W7A-2y-Mz2" customClass="PostDetailViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="W7A-2y-Mz2" userLabel="PostDetail" customClass="PostDetailViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="P6c-hI-tkp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -156,13 +156,28 @@
                             <outlet property="delegate" destination="W7A-2y-Mz2" id="KX5-Ai-Wps"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="话题详情" id="xtm-Ns-Pki">
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="tLy-wk-jig">
+                            <connections>
+                                <segue destination="C1f-Jb-hWg" kind="presentation" identifier="NewComment" id="ch0-ZD-VB3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="P6c-hI-tkp" id="P9l-7J-fjs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjQ-XQ-zey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="145"/>
+            <point key="canvasLocation" x="3431.1999999999998" y="144.3778110944528"/>
+        </scene>
+        <!--NewComment-->
+        <scene sceneID="JtQ-gb-2CD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewComment" id="C1f-Jb-hWg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaN-q4-peK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4079" y="144"/>
         </scene>
     </scenes>
     <resources>

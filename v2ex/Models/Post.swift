@@ -104,7 +104,7 @@ class Post {
         }
     }
 
-    class func getPostList(from pageType: PageType, pageNum: Int = 1, completion: @escaping ([Post]) -> Void) {
+    static func getPostList(from pageType: PageType, pageNum: Int = 1, completion: @escaping ([Post]) -> Void) {
         var url = baseURL
         var params = ["p": "\(pageNum)"]
         var xpath = "//div[@class='cell item']"
@@ -152,4 +152,26 @@ class Post {
         }
     }
 
+    func submit(comment: String, completion: @escaping (Bool) -> Void) {
+        guard let url = self.url, let once = User.shared.once else {
+            completion(false)
+            return
+        }
+
+        let headers = [
+            "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36"
+        ]
+        let params = [
+            "once": once,
+            "content": comment
+        ]
+
+        Alamofire.request(url, method: .post, parameters: params, headers: headers).validate().responseString { response in
+            if (response.response?.url?.relativeString.contains("reply"))! {
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
+    }
 }

@@ -19,6 +19,8 @@ class PostDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
 
@@ -27,6 +29,8 @@ class PostDetailViewController: UIViewController {
                 self.postDetail = detail
                 self.tableView.reloadData()
             }
+        } else {
+            navigationItem.rightBarButtonItem = nil
         }
 
         // 隐藏多余的分割线
@@ -67,6 +71,15 @@ class PostDetailViewController: UIViewController {
         }
     }
 
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewComment" {
+            let newCommentVC = segue.destination as! NewCommentViewController
+            newCommentVC.post = post
+            newCommentVC.delegate = self
+        }
+    }
+
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -97,4 +110,18 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+}
+
+extension PostDetailViewController: NewCommentViewControllerDelegate {
+
+    func newCommentViewControllerDidCancel(_ controller: NewCommentViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func newCommentViewController(_ controller: NewCommentViewController, didFinishSubmitting comment: String) {
+        controller.dismiss(animated: true) {
+            let hudView = HUDView.hud(inView: self.view, hudType: .finish)
+            hudView.text = "回复成功"
+        }
+    }
 }

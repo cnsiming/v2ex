@@ -8,7 +8,7 @@
 
 import Kanna
 
-class Comment {
+struct Comment {
     var avatar: String?
     var username: String?
     var time: String?

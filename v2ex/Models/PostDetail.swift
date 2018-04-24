@@ -29,6 +29,10 @@ class PostDetail {
             if let description = doc.xpath("//*[@id='Main']/div[4]/div[1]/span/text()[1]").first?.content {
                 self.commentCount = Int(description.split(separator: " ")[0]) ?? 0
             }
+
+            // 读取最新的once，回帖时使用
+            User.shared.once = doc.xpath("//input[@name='once']").first?["value"]
+
             for element in doc.xpath("//*[@id='Main']/div[4]/*/table") {
                 if let comment = Comment(by: element.toHTML!) {
                     self.comments.append(comment)

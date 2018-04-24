@@ -95,7 +95,7 @@ class PostListViewController: UIViewController {
     }
 
     @objc private func dailyMission() {
-        let hudView = HUDView.hud(inView: view, animated: true)
+        let hudView = HUDView.hud(inView: view, hudType: .finish)
         hudView.text = "已签到"
     }
 

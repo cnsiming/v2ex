@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZPa-Jf-Khw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Comment View Controller-->
+        <scene sceneID="7aN-Qz-6P8">
+            <objects>
+                <viewController id="ZPa-Jf-Khw" customClass="NewCommentViewController" customModule="v2ex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9u9-fd-kW4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOk-hv-v1C">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="zmG-CY-4fW">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="QK2-yL-UJA">
+                                            <connections>
+                                                <action selector="close:" destination="ZPa-Jf-Khw" id="pEF-mV-Mbe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="回复" style="done" id="SBc-HI-INy">
+                                            <connections>
+                                                <action selector="submit:" destination="ZPa-Jf-Khw" id="poR-1q-nV6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Ue-fg-02S">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpi-aA-FJp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="LOy-wx-QBn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NOk-hv-v1C" firstAttribute="leading" secondItem="Pns-iJ-hpq" secondAttribute="leading" id="C0J-Qd-34n"/>
+                            <constraint firstItem="NOk-hv-v1C" firstAttribute="trailing" secondItem="Pns-iJ-hpq" secondAttribute="trailing" id="FoC-7w-GkV"/>
+                            <constraint firstItem="hpi-aA-FJp" firstAttribute="top" secondItem="9u9-fd-kW4" secondAttribute="top" id="HJg-Yy-pa8"/>
+                            <constraint firstItem="Pns-iJ-hpq" firstAttribute="trailing" secondItem="hpi-aA-FJp" secondAttribute="trailing" id="Prj-1N-37n"/>
+                            <constraint firstItem="hpi-aA-FJp" firstAttribute="leading" secondItem="Pns-iJ-hpq" secondAttribute="leading" id="nlG-Gy-fqa"/>
+                            <constraint firstItem="NOk-hv-v1C" firstAttribute="top" secondItem="Pns-iJ-hpq" secondAttribute="top" id="pXw-xt-hXa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pns-iJ-hpq"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="9Ue-fg-02S" id="3w3-wq-DZj"/>
+                        <outlet property="submitButton" destination="SBc-HI-INy" id="jZc-hn-WRL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Hb-A3-vHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2994.4000000000001" y="109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>
